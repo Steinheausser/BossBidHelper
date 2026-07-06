@@ -1,0 +1,867 @@
+/* Basic HTML
+----------------------------------------------------------------------------------------------------*/
+/**felicia-start**/
+.ttplanner_classtimetable
+{
+    width:100%!important;
+    height:550px!important;
+}
+
+.TTPlanner_Msg_BiddingPeriod
+{
+    font-weight:bold;
+}
+.TTPlanner_Msg_CannotCheckoutWarning
+{
+    color:Red;
+}
+.TTPlanner_GridCaption_CourseType
+{
+    color: #9f9168;
+    font-weight: bold;
+    width:100%;
+    /*background-color:Silver;*/
+    padding: 3px 2px 3px 2px;
+}
+.TTPlanner_Status_Error
+{
+    color:Red;
+    font-weight:bold;
+}
+.TTPlannerCheckout_Grid_Msg
+{
+    color:Black;
+}
+.TTPlannerCheckout_Error_Msg
+{
+    color:Red;
+}
+.StatusMsg
+{
+    color:Blue;
+}
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+	
+}
+
+.modalPopup {
+	background-color:#ffffff;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:500px;
+	
+}
+/**felicia-end**/
+
+/* The Modal (background) */
+.instruction-mode-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.instruction-mode-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    font-size:14px;
+}
+
+/* The Close Button */
+.instruction-mode-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .instruction-mode-close:hover,
+    .instruction-mode-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+body  
+{
+	font-size:12px; 
+	font-family:Arial, Helvetica, sans-serif;
+  	background: #f0f0f0; color: #333;
+	margin: 0 auto; /*overflow: hidden;*/
+	-webkit-text-size-adjust: none; /* to disable text size adjust on the iPhone.*/
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;	
+         margin-bottom: 42px;/*Abbas*/	
+
+ }
+
+/* RWD Reset
+----------------------------------------------------------------------------------------------------*/
+@-ms-viewport { width: device-width;  }
+html { overflow-y: auto;  
+         position: relative;/*Abbas*/
+         min-height: 100%;/*Abbas*/}
+span, img { border:0; vertical-align: middle; }
+
+
+/* #Typography
+----------------------------------------------------------------------------------------------------*/
+/*h2{ margin:0; padding: 0 0 28px 0; }*/
+h2{ font-size: 14px; text-transform:uppercase; color:#9f9168; margin:0; padding-bottom:10px; padding-left:10px;}
+h3{ font-size:1em;}
+
+	
+/* Headings
+----------------------------------------------------------------------------------------------------*/
+
+/* Spacing
+----------------------------------------------------------------------------------------------------*/
+ol { list-style: decimal; }
+/* removed by felicia-22-jan
+ul, li { list-style:  none;  }  
+*/ 
+li { padding-left:5px; /*30px*/ }
+/* a { text-decoration:none!important; color:Blue!important; } */
+
+/* Misc Classes
+----------------------------------------------------------------------------------------------------*/
+.align_center { text-align: center; }
+.align_right { text-align: right; }
+.clear { clear:both;}/**/
+.vclear_5 {	    	
+	clear: both;	    	
+	height:10px;	    
+}
+.hide { display:none!important; }
+	/* Class Search Styling */
+	.content {  
+		width: 100%;
+		font-size:12px; 
+		font-family:Arial, Helvetica, sans-serif;  
+		float:left;
+	}
+
+	.course_detail_row_top  {		    
+		width: auto;		    
+		height:auto;		    
+		float:left;		    
+		font-size:11px; 
+		font-family:Arial, Helvetica, sans-serif;		    
+		font-weight:normal;		    
+		margin-top:0px;		    
+		margin-right:5px;		    
+	}	
+	
+	.course_detail_row_left1, .course_detail_row_right1, .course_detail_row_left2, .course_detail_row_right2  {		    
+		width: auto;		    
+		height:auto;		    
+		float:left;		    
+		font-size:11px; 
+		font-family:Arial, Helvetica, sans-serif;		    
+		font-weight:normal;		    	    
+		margin-left:10px;		    
+		margin-right:5px;	    		    
+	}	
+
+	.course_detail_row_right1  {
+		width: 200px;
+		margin-left:2px;
+	}
+
+    .course_detail_row_left2 {
+		width: 100px;
+	}
+	
+	.course_detail_row_right2 {
+		width: 300px;
+	}
+
+/* HEADER
+----------------------------------------------------------------------------------------------------*/
+#boss_header { height:100px; width:100%; background-image:url(../images/header_shadow.jpg); background-repeat:repeat-x;position:relative;} /*can delete the property*/
+#boss_header .boss_logo { float:left; padding: 12px 0 0 3px;}
+
+#boss_header .boss_logindetails { float:right; text-align:right; height:auto; position:absolute; right:10px; top:15px;/* width:300px */}
+#boss_header .boss_logindetails .systemtime { float:left; padding: 0 0 0 0;} /*padding: 0 10px 0 10px;*/
+#boss_header .boss_logindetails .systemtime img {padding: 0 0 0 5px} /*{padding: 0 10px 0 10px}*/
+#boss_header .boss_logindetails .username { font-weight:bold; float:left; padding-top:5px;}
+
+#boss_header .boss_test { float:left; text-align:left; position:absolute; left:10px; top:15px;}
+#boss_header .boss_test .studentID {float:left; width:160px;}
+#boss_header .boss_test .setID {float:left; width:80px;}
+
+/* MAIN NAV
+----------------------------------------------------------------------------------------------------*/
+/*
+.menu {float: right; position:absolute; right:10px; top:50px;}
+.menu ul{background-color: #fff;}  
+.menu ul li{ padding-left:5px;}  
+.menu ul li a {display: block; text-decoration: none;}  
+.menu ul li a span {font-size: 12px; line-height: 40px; color: navy; display: block; font-weight:bold;}  
+.menu ul li a:hover {font-size: 12px; line-height: 40px; display: block; font-weight:bold;}  
+.menu ul li a:hover span{font-size: 12px; line-height: 40px; color: red!important; display: block; font-weight:bold;}
+.menu .Separator {background-color: ActiveBorder !important; height:1px; margin-right:10px;}
+
+.RadMenu .rmGroup .rmText  { padding: 0 5px 0 5px !important; font-size: 12px; width: 150px; line-height: 30px; background-color: White; font-weight:normal;color: black;}
+*/
+
+/* for root items */
+    div.RadMenu_Simple
+    {
+        float: right; position:absolute; right:10px; top:50px;       
+    }
+    div.RadMenu_Simple ul.rmRootGroup
+    {
+        background-color: white;
+        border-width:0px;
+    }
+     
+     div.RadMenu_Simple .rmLink
+     {
+         color:Black;
+         background-color:White;
+         font:Arial normal bold 12px!important;
+         line-height:35px!important;
+         display:block!important;
+     }
+      
+     /* for hover, focused, expanded items */
+     div.RadMenu_Simple .rmItem .rmLink:hover,
+     div.RadMenu_Simple .rmItem .rmFocused,
+     div.RadMenu_Simple .rmItem .rmSelected,
+     div.RadMenu_Simple .rmItem .rmExpanded
+     {
+         color:White!important;
+         background-color:#9f9168!important;
+         border:1px solid LightGray!important;
+    }
+    
+     
+    /*for subitems */
+    div.RadMenu_Simple .rmGroup /* rmGroup : Applied to each item container except the root level one */
+    {
+        background: Gainsboro;
+        border: 1px solid #F5F5F5;
+    }
+     
+     div.RadMenu_Simple .rmGroup .rmLink /*rmLink : Applied to the anchors representing each item in its default state.*/
+     {
+         background: Gainsboro;
+     }
+      
+     /* for hover, focused, expanded items */
+     div.RadMenu_Simple .rmGroup .rmItem .rmLink:hover,
+     div.RadMenu_Simple .rmGroup .rmItem .rmFocused,
+     div.RadMenu_Simple .rmGroup .rmItem .rmSelected,
+     div.RadMenu_Simple .rmGroup .rmItem .rmExpanded 
+     {
+        background-color:DarkGray!important;
+        border:1px solid LightGray!important;
+     }
+     
+/* BOSS WINDOWS
+----------------------------------------------------------------------------------------------------*/
+.bidding_boss_windows {float: left; padding-top:5px; position:absolute; right:280px; top:45px;} 
+.bidding_boss_windows .text { float:left; font-size: 14px; font-weight:bold; text-transform:uppercase; color:#9f9168; margin:0; padding:0; width:100px;  }
+.bidding_boss_windows .time_table_planer { float:right;} /*left*/
+
+
+/* RIGHT TOP GRID 8
+----------------------------------------------------------------------------------------------------*/
+.school_term { text-align: left; vertical-align: middle; float:left;}
+.my_career_space{float:left;width:10px;}
+.my_career_select{ text-align:left; float: left; width:170px;}
+
+
+/* ANNOUNCEMENTS
+----------------------------------------------------------------------------------------------------*/
+.announcements { padding:10px; background-color:#FFF; margin-bottom:15px; }
+.announcements .title img {padding: 0 6px 3px 0;}
+.announcements .title { font-size: 14px; font-weight:bold; text-transform:uppercase; color:#9f9168; margin:0; padding:0; }
+
+
+/* @group COLLAPSIBLE GENERIC
+-------------------------------------------------------------------------*/
+/* Collapsible */
+.boss_collapsible{ clear:both; position:relative; margin:0 0 2em; /*margin:.5em 0 2em*/ padding:1.5em 0 0; /*padding:1.5em 1.5em .75em;*/  /*border:1px solid #d2d2d2;*/ /*overflow:hidden;*/ }
+.boss_collapsible a {padding:1px; border:1px dotted #bbc; border-width:0 0 1px}
+.boss_collapsible a:link, a:visited {color:#2e4793; text-decoration:none}
+.boss_collapsible a:hover{color:#333}
+
+
+/* Collapsible - Expand */
+.boss_collapsible .expand {clear:both; margin:0; padding-bottom: 8px; text-indent:10px} /* This is the Tab */
+.boss_collapsible .expand a {display:block; padding:3px 5px}
+.boss_collapsible .expand a:link, .expand a:visited { border-width:1px; padding:5px 0; background-image:url(../images/icon_plus.png); background-repeat:no-repeat; background-position:98% 50%; background-color:#999; color:#FFF; }
+.boss_collapsible .expand a:hover, .expand a:active, .expand a:focus {outline-color:#dedede}
+.boss_collapsible .expand a:link.open, .expand a:visited.open {background:url(../images/icon_minus.png) no-repeat scroll 98% 50% #00689e; color:#FFF;}
+.add_collapsible .boss_collapsible{visibility:hidden } /* for JS */
+
+
+
+/* Collapsible - Switch */
+.switch {position:absolute; /*top:1.5em; right: 1.5em; padding:3px*/ top:-15px;right: .50em; color:#333;  }
+.switch a, a:hover { color:#333; }
+/* @end COLLAPSIBLE */
+
+/*Telerik Grid Style*/
+.RadGrid_Default {font-size:11px!important; font-family:Arial, Helvetica, sans-serif!important; border:0px none #F0F0F0!important; outline: none!important;}
+.RadGrid_Default .rgGroupHeader {background-color:#00689e!important; color:#FFF!important; font-weight:bold!important; font-family: Arial,Helvetica,sans-serif!important; padding: 0px 0px 0px 10px;}
+.RadGrid_Default .rgGroupHeader td {border-color: white!important; border-width:2px!important;}
+.RadGrid .rgGroupHeader td p{ padding:0px!important;}
+.RadGrid_Default .rgMasterTable td.rgGroupCol, .RadGrid_Default td.rgNoRecords .rgMasterTable td.rgExpandCol { border-color: white!important; background: white!important;padding:3px 2px 2px 3px!important;}
+.RadGrid_Default .rgRow td {background-color:white;}
+.RadGrid_Default .rgAltRow td {background-color: #E0E0E0;}
+.RadGrid_Default .rgRow a, .RadGrid_Default .rgAltRow a {color:Blue!important;}
+.RadGrid .rgHeader, .RadGrid th.rgResizeCol { padding-top:0!important; padding-bottom:0!important; font-weight:bold; background-color:LightGray;}
+.RadGrid .rgRow td, .RadGrid .rgAltRow td, .RadGrid .rgEditRow td, .RadGrid .rgFooter td{padding:0!important;}
+.RadGrid .rgRow td, .RadGrid .rgAltRow td, .RadGrid .rgEditRow td, .RadGrid .rgFooter td, .RadGrid .rgFilterRow td, .RadGrid .rgHeader, .RadGrid .rgResizeCol, .RadGrid .rgGroupHeader td {padding:0!important; padding-left: 5px!important;}
+.RadGrid_Default .rgHeader, .RadGrid_Default th.rgResizeCol {background-color:#F8F8F8!important;border-width: 0px 0px 1px; border-style: none none solid; border-color: lightgray!important;padding:3px 2px 2px 3px!important;font-weight:bold!important;font-size:11px;}
+.RadGrid_Default .rgRow td, .RadGrid_Default .rgAltRow td, .RadGrid_Default .rgEditRow td, .RadGrid_Default .rgFooter td { border:0px!important;padding:3px 2px 2px 3px!important;}
+.RadGrid a img {border: none; width:15px; height:15px; }
+
+/*Telerik Scheduler Style*/
+* + html div.RadScheduler .rsHorizontalHeaderTable, * + html div.RadScheduler .rsContentTable, * + html div.RadScheduler .rsAllDayTable { width: auto !important; }
+* + html .RadScheduler .rsVerticalHeaderTable tr.rsMainHeader div.rsMainHeader { width: auto; }
+.RadScheduler, .RadScheduler_Default { font-family: Arial,Helvetica,sans-serif!important; }
+.RadScheduler .rsTopWrap tr.rsHidden{ display: block; }
+.RadScheduler .rsHeader h2 { display:block!important; text-align:center!important; font-size:11px!important; text-transform:none!important; color:Black; }
+.RadScheduler .rsDateHeader { font-size:11px!important }
+.RadScheduler .rsAptSimple .rsAptContent {margin:0px!important; font-size:10px!important; padding:0px!important; font-weight:500!important; color:Black!important; }
+.RadScheduler .rsAptOut  { border-width:1px!important; border-color:Black!important; }
+div.RadScheduler .rsHorizontalHeaderTable, div.RadScheduler .rsContentTable, div.RadScheduler .rsAllDayTable { width: /*\**/ 100% !important; }
+
+/*
+.RadMenu .rmGroup .rmText { width:250px!important; }
+*/
+/*
+.RadScheduler, .RadScheduler_Default { font-family: Arial,Helvetica,sans-serif!important; }
+.RadScheduler_Default, .RadScheduler_Default a, .RadScheduler_Default input, .RadScheduler_Default select, .RadScheduler_Default textarea { font: 11px "Segoe UI",Arial,sans-serif!important;}
+.RadScheduler .rsHeader p {padding-top:7px;}
+.RadScheduler .rsHeader ul a { padding-top:7px;}
+.RadScheduler .rsHeader .rsToday {padding-top:7px;}
+.RadScheduler .rsHeader .rsPrevDay { margin:0px!important; }
+.RadScheduler .rsHeader .rsNextDay { margin:0px!important; }
+.RadScheduler_Default .rsAptSimple { width:100%!important;}
+
+.RadMenu .rmGroup .rmText { width:250px!important; }
+*/
+
+.OverallResultsGrid .rgRow td {background-color:white; padding:3px 5px 3px 5px!important;}
+.OverallResultsGrid .rgAltRow td {background-color: #E0E0E0; padding:3px 5px 3px 5px!important;}
+.OverallResultsGrid .rgHeader, .RadGrid th.rgResizeCol { background-color:rgb(248, 248, 248)!important; padding:5px 5px 3px 5px!important; font-weight:bold; }
+.OverallResultsGrid a img {border: none; width:15px; height:150px; }
+
+.EAccount .rgRow td {background-color:white; padding:3px 2px 2px 3px!important;}
+.EAccount .rgAltRow td {background-color: #E0E0E0; padding:3px 2px 2px 3px!important;}
+.EAccount .rgHeader, .RadGrid th.rgResizeCol { background-color:transparent!important; padding:3px 2px 2px 2px!important; font-weight:bold; }
+.EAccount a img {border: none; width:15px; height:150px; }
+
+.ClassSearchGrid .rgAltRow td {background-color:White; }
+.ClassSearchGrid .rgRow {border-color:Black; border:1px; }
+
+.DropClassTitle {text-align:center; font-size:18px; font-weight:bold; color:Black;}
+.DropClassPanel {width:800px; border:1px Solid Gray;}
+.DropClassGrid {margin:10px 30px 10px 30px;}
+.DropClassError .rgRow td {background-color:#F0F0F0!important; border: 0px none #F0F0F0!important; font-size:12px!important; color:Red!important;}
+.DropClassError .rgAltRow td {background-color:#F0F0F0!important; border: 0px none #F0F0F0!important; font-size:12px!important; color:Red!important;}
+
+/*Telerik Tab Style*/
+.RadTabStrip .rtsLevel1 .rtsTxt, .RadTabStripVertical .rtsLevel1 .rtsTxt{padding:0!important; font-weight:bold;}
+.RadTabStrip .rtsLink, .RadTabStripVertical .rtsLink {}
+
+/*Telerik Auto Complete Style*/
+.RadAutoCompleteBoxPopup .racItem{ }
+
+/* Telerik Combo Box */
+.RadComboBox .rcbInput { width: 100%; }
+
+/*Multi Tab Style*/
+#TabWrapper { border: thin solid gray; background-color: #F6F6F6; padding:10px;}
+#TabWrapper .SearchMethod { text-align:left; width:100%; position:relative;}
+#TabWrapper .SearchMethod .BasicSearch { text-align:left; width:670px; float:left;}
+#TabWrapper .SearchMethod .Switch { text-align:left; width:30px; float:left;}
+#TabWrapper .SearchMethod .AdvanceSearch { text-align:left; width:670px; float:left;}
+#TabWrapper .SearchMethod .SearchButton { text-align:left; width:700px; float:left;}
+#TabWrapper .SearchMethod .SearchIcon { padding-top:65px; text-align:left;}
+#TabWrapper .SearchResult { text-align:left; width:100%;float:left; padding-top:20px;}
+
+input{ background: none repeat scroll 0% 0% transparent;}
+
+/*Normal Grid view Style class search*/
+.SearchResultTotal { vertical-align:top; }
+.SearchResultHeader  { background-color:#E6E6E6!important;border-width: 0px 0px 1px; border-style: none none solid; border-color: gray!important; text-align:right; font-family: Arial,Helvetica,sans-serif; font-size:13px; font-weight:bold;}
+.SearchResultHeaderL { background-color:#E6E6E6!important;border-width: 0px 0px 1px; border-style: none none solid; border-color: gray!important; text-align:right; font-family: Arial,Helvetica,sans-serif; font-size:13px;}
+.SearchResultMeeting { border:none; padding:5px; font-size:12px; font-family: Arial,Helvetica,sans-serif; text-align:right;}
+
+.SearchLabel{text-align:right; }
+
+.Hyperlink {color:Blue!important;text-decoration:underline!important;}
+/* Left Div */
+.ClassSearchLeftDiv {
+  width: 100%;
+  padding: 0 0px;
+  float:left;
+  text-align: left;
+ }
+
+/* Right Div */
+.ClassSearchRightDiv {
+  width: 100%;
+  height: 100%;
+  padding: 0 0px;
+  float:right;
+  text-align: left;
+ } 
+
+
+.LatestBiddingResultsTitle 
+{
+  font-size:18px;
+  font-weight:bold;
+  color:Black;  
+}
+/* ----------------------------------------------------------------------
+@group LEFT COLUMN
+-------------------------------------------------------------------------*/
+/* Admin Hold */
+.admin_hold {}
+
+/* Boss Dates */
+.boss_dates {}
+
+/* Term Info */
+.term_info {}
+
+/* E-Account */
+.e_account {}
+
+/* CU Summary */
+.cu_summary {}
+
+/* @end LEFT COLUMN */
+
+
+
+/* ----------------------------------------------------------------------
+@group RIGHT COLUMN
+-------------------------------------------------------------------------*/
+/* My Course */
+.my_course {}
+
+/* Excempted Course */
+.excempted_course {}
+
+/* Enrolled Course */
+.enrolled_course {}
+
+/* @end LEFT COLUMN */
+
+
+
+/* ----------------------------------------------------------------------
+@group FOOTER
+-------------------------------------------------------------------------*/
+/*.footer { background-color:#b3b3b3; width:100%; height:30px; color:#FFF; padding:10px 0 1px 2%; font-size:11px; text-align:left; Position: fixed; Bottom:0;}*/
+/* @end FOOTER */
+
+
+.RadScheduler_Telerik div.rsHeader .rsPrevDay {
+    width: 14px!important;
+   
+}
+th.rgHeader
+{
+    background-image: none!important;
+}
+
+@media only screen and  (max-width: 920px) {
+.grid_5
+{
+    float:left !important;   
+    width:95% !important;
+  }
+.grid_7
+{
+    float:left !important;
+    width:95% !important;
+    bottom:0px !important; 
+   
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+.footer
+{
+    display:none;
+  }
+}
+
+.footer
+{
+background-attachment: scroll;
+background-clip: border-box;
+background-color: #AAA;
+background-image: none;
+background-origin: padding-box;
+background-position: 0% 0%;
+background-repeat: repeat;
+background-size: auto auto;
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+bottom: 0px;
+color: #333;
+font-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+height: 42px;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: absolute;
+vertical-align: middle;
+width: 100%;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+ bottom:0;
+    
+}
+.footer-bar
+{
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+color: #333;
+font-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+vertical-align: baseline;
+width: 98%;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+}
+.footer-bar-inner
+{
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+color: #333;
+display: block;
+floatleftfont-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 9px;
+margin-right: 9px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+position: relative;
+vertical-align: baseline;
+width: 97%;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+}
+
+.footer-inner-2
+{
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+color: #333;
+floatleftfont-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 50px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+vertical-align: baseline;
+width: 96%;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+}
+.footer-inner-clearfix
+{
+    border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+color: #333;
+font-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+vertical-align: baseline;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+
+}
+.footer-contentclearfix
+{
+border-bottom-color: #333;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #333;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #333;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #333;
+border-top-style: none;
+border-top-width: 0px;
+color: #333;
+font-family: "myriad-pro",sans-serif;
+font-size: 14px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 21px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+outline-color: #333;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+vertical-align: baseline;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+
+}
+.footer-copyright
+{
+border-bottom-color: #FFF;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0 0 0 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100% 100% 100% 100%;
+border-image-source: none;
+border-image-width: 1 1 1 1;
+border-left-color: #FFF;
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: #FFF;
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: #FFF;
+border-top-style: none;
+border-top-width: 0px;
+color: #FFF;
+font-family: "myriad-pro",sans-serif;
+font-size: 11px;
+font-size-adjust: none;
+font-stretch: normal;
+font-style: normal;
+font-variant: normal;
+font-weight: 400;
+line-height: 16.5px;
+margin-bottom: 0px;
+margin-left: 14%;
+margin-right: 0px;
+margin-top: 12px;
+outline-color: #FFF;
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 0px;
+padding-left: 3px;
+padding-right: 3px;
+padding-top: 0px;
+vertical-align: middle;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+-moz-font-feature-settings: normal;
+-moz-font-language-override: normal;
+}

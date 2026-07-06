@@ -1,0 +1,17 @@
+[package]
+name = "smu_bid_analyser"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow", "persistence", "wayland", "x11"] }
+egui = "0.31"
+egui_plot = "0.31"
+polars = { version = "0.46", features = ["parquet", "lazy", "strings", "dtype-categorical"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+nucleo = "0.5.0"
+linregress = "0.5.4"
+chrono = "0.4"
+lazy_static = "1.5.0"
+dirs = "6.0.0"

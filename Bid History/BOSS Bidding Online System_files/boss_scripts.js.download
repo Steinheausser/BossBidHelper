@@ -1,0 +1,58 @@
+/* ---------------------------------------------
+CALLING GRID SYSTEM //this JS calls and use the JS according to breakpoint.
+------------------------------------------------ 
+var ADAPT_CONFIG = {
+  path: 'css/',
+  // false = Only run once, when page first loads.
+  // true = Change on window resize and page tilt.
+  dynamic: true,
+  range: [
+	'0px    to 320px  = 320.css', 	// Smartphones/iPhone Portrait
+	'321px  to 480px  = 480.css', 	// Mobile portrait
+	'481px  to 600px  = 600.css', 	// Small Tablet
+	'601px  to 768px  = 768.css', 	// Tablet potrait
+	'769px  to 1024px  = 1024.css', // Tablet landscape/Netbook
+	'1024px 		   = 1024.css', //Desktop/widescreen	
+  ]
+};
+
+*/
+
+/* ---------------------------------------------
+COLLAPSIBLE
+------------------------------------------------ */
+jQuery.noConflict()(function($){
+		
+  $("html").addClass("add_collapsible");
+  // override the following default plugin settings to have everything expanded by default:
+  //$.fn.expandAll.defaults.state = "shown";
+  //$.fn.expandAll.defaults.initTxt = "hide";
+
+	  $("#boss_collapsible_LeftPanel div.cat h3.expand").toggler();
+	  $("#boss_collapsible_RightPanel div.cat h3.expand").toggler();  
+	  // $("#boss_collapsible_XXX div.cat h3.expand").toggler(); // declare new ID if you want create another div
+  
+	  $("#rightPanel").expandAll({trigger: "h3.expand", ref: "h3.expand"});
+	  $("#leftPanel").expandAll({trigger: "h3.expand", ref: "h3.expand"});
+  
+   $("#boss_collapsibleWrap div.post").expandAll({
+	});
+	$("html").removeClass("add_collapsible");
+  });
+
+function AlertThenRedirect(sMsg, sURL) {
+    alert(unescape(sMsg));
+    window.location = decodeURI(sURL);
+}
+
+function Alert(sMsg, sURL) {
+    alert(unescape(sMsg));
+}
+
+  
+  
+  
+  
+  
+  
+

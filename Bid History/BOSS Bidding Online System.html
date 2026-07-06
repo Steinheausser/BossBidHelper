@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)https://boss.intranet.smu.edu.sg/OverallResults.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="t-chrome t-chrome148"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>BOSS Bidding Online System</title><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="cleartype" content="on">  <!--Microsoft -->   
+    
+	<!-- Meta Tags -->
+	<meta name="description" content="BOSS, Singapore Management University"><meta name="keywords" content="your keyword here"><meta name="author" content="Singapore Management University"><meta name="robots" content="index, follow"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- CSS non-minified for staging, minify before moving to production-->
+    
+    <link rel="stylesheet" href="./BOSS Bidding Online System_files/skeleton.css"><link rel="stylesheet" href="./BOSS Bidding Online System_files/boss_global.css">    
+
+	<!-- JS Advance Loading Technique using script loader -->   
+    <script src="./BOSS Bidding Online System_files/load.js.download" type="text/javascript"></script>
+    <script type="text/javascript">
+        head.js(
+		{ jquery: "js/jQuery_v1.7.1.min.js" },
+        { accordion: "js/boss_collapsible_plugin.js" },
+		{ custom: "js/boss_scripts.js" }
+        );
+
+        function clientItemChecking(sender, args) {
+            var checkedItems = sender.get_checkedItems().length;
+            if (checkedItems >= 4 && (args.get_item().get_checked() == false)) {
+                args.set_cancel(true);
+            }
+        }
+        function RadButton_Search_Clicked(button, args) {
+            resetTimer();                  
+            var validated = Page_ClientValidate("OverallResultsGroup");
+            if (!validated) {         
+                button.set_enabled(true);
+            }
+
+        }
+        
+        function RadButton_Reset_Clicked(button, args) {
+            resetTimer();
+        }
+
+    </script> 
+    <link href="./BOSS Bidding Online System_files/WebResource.axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(1).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(2).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(3).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(4).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(5).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(6).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(7).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(8).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(9).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link href="./BOSS Bidding Online System_files/WebResource(10).axd" type="text/css" rel="stylesheet" class="Telerik_stylesheet"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="./BOSS Bidding Online System_files/WebResource(11).axd"><link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="./BOSS Bidding Online System_files/WebResource(12).axd"></head><script type="text/javascript" src="./BOSS Bidding Online System_files/jQuery_v1.7.1.min.js.download"></script><script type="text/javascript" src="./BOSS Bidding Online System_files/boss_collapsible_plugin.js.download"></script><script type="text/javascript" src="./BOSS Bidding Online System_files/boss_scripts.js.download"></script>
+<body>
+    <form method="post" action="https://boss.intranet.smu.edu.sg/OverallResults.aspx" onsubmit="javascript:return WebForm_OnSubmit();" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;RadButton_Search&#39;)" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value=";;AjaxControlToolkit, Version=4.1.60919.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e:en-US:ee051b62-9cd6-49a5-87bb-93c07bc43d63:ea597d4b:b25378d2;Telerik.Web.UI, Version=2025.3.825.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:5c0dae45-ffdf-4a83-b3f2-23fb9a94d22c:16e4e7cd:f7645509:24ee1bba:33715776:e330518b:88144a7a:1e771326:8e6f0d33:1f3a7489:6a6d718d:f46195d3:2003d0b8:c128760b:aa288e2d:258f1c72:b7778d6c:6d43f6d9:b2e06756:92fe8ea0:fa31b949:4877f69a:874f8ea2:19620875:490a9d4e:bd8f85e4;;Telerik.Web.UI, Version=2025.3.825.462, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:5c0dae45-ffdf-4a83-b3f2-23fb9a94d22c:58366029;">
+
+
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./BOSS Bidding Online System_files/WebResource(13).axd" type="text/javascript"></script>
+
+
+<script src="./BOSS Bidding Online System_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./BOSS Bidding Online System_files/Telerik.Web.UI.WebResource.axd" type="text/javascript"></script>
+<script src="./BOSS Bidding Online System_files/WebResource(14).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	
+	
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form1', ['tUpdatePanel_Search','UpdatePanel_Search','tUpdatePanel_Result','UpdatePanel_Result'], [], [], 90, '');
+//]]>
+</script>
+
+    <br><br>
+    <!--<div class="container_12">-->
+	    <div class="grid_12">
+            <div id="RadTabStrip_OverallResults" class="RadTabStrip RadTabStrip_Default RadTabStripTop_Default RadTabStripTop" style="overflow:hidden;">
+	<!-- 2025.3.825.462 --><div class="rtsLevel rtsLevel1">
+		<ul class="rtsUL"><li class="rtsLI rtsFirst rtsLast"><a class="rtsLink rtsSelected" href="https://boss.intranet.smu.edu.sg/OverallResults.aspx#"><span class="rtsOut"><span class="rtsIn"><span class="rtsTxt">Overall BOSS Results</span></span></span></a></li></ul>
+	</div><input id="RadTabStrip_OverallResults_ClientState" name="RadTabStrip_OverallResults_ClientState" type="hidden" autocomplete="off" value="{&quot;selectedIndexes&quot;:[&quot;0&quot;],&quot;logEntries&quot;:[],&quot;scrollState&quot;:{}}">
+</div>
+            <div id="TabWrapper">                                
+            <div id="RadMultiPage_CourseSearch" class="RadMultiPage RadMultiPage_Default">
+	<div id="RadPageView_Course" class="rmpView">
+		
+                <div class="OverallResult">
+             <div id="UpdatePanel_Search">
+                    <div class="SearchMethod">
+                        <table class="style1" border="0">
+                        <tbody><tr>
+                            <td class="SearchLabel">
+                                <span id="lblCourseCareer">Course Career</span>
+                            </td>
+                            <td>
+                                <div id="rcboCourseCareer" class="RadComboBox RadComboBox_Default" style="width:200px;white-space:normal;">
+	<!-- 2025.3.825.462 --><table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboCourseCareer" type="text" class="rcbInput radPreventDecorate" id="rcboCourseCareer_Input" value="Undergraduate" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboCourseCareer_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboCourseCareer_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem">Graduate</li><li class="rcbItem">Graduate - Accounting</li><li class="rcbItem">Graduate - Applied Finance</li><li class="rcbItem">Graduate - Business Admin</li><li class="rcbItem">Graduate - Business AI</li><li class="rcbItem">Graduate - Communication Mgmt</li><li class="rcbItem">Graduate - Economics (CW)</li><li class="rcbItem">Graduate - Financial Economics</li><li class="rcbItem">Graduate - Human Capital Lead</li><li class="rcbItem">Graduate - Innovation / E&amp;I</li><li class="rcbItem">Graduate - IT in Business</li><li class="rcbItem">Graduate - Juris Doctor</li><li class="rcbItem">Graduate - Law</li><li class="rcbItem">Graduate - Management (CW)</li><li class="rcbItem">Graduate - Prof. Accounting</li><li class="rcbItem">Graduate - Quantitative Fin</li><li class="rcbItem">PGP Course sharing for LKCSB</li><li class="rcbItem">PGP Course sharing for SOE</li><li class="rcbItem">PGPP Cross-Career</li><li class="rcbItem">Undergraduate</li></ul></div></div></div><input id="rcboCourseCareer_ClientState" name="rcboCourseCareer_ClientState" type="hidden" autocomplete="off">
+</div>
+                                &nbsp;&nbsp;
+                                <span id="lblCourseType">Course Type</span>
+                                <div id="rcboCourseType" class="RadComboBox RadComboBox_Default" style="width:100px;white-space:normal;">
+	<table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboCourseType" type="text" class="rcbInput radPreventDecorate" id="rcboCourseType_Input" value="COURSE" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboCourseType_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboCourseType_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem">COURSE</li></ul></div></div></div><input id="rcboCourseType_ClientState" name="rcboCourseType_ClientState" type="hidden" autocomplete="off">
+</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="SearchLabel">
+                                <span id="lblTerm">Term</span>
+                            </td>
+                            <td>
+                                <div id="rcboTerm" class="RadComboBox RadComboBox_Default" style="width:150px;white-space:normal;">
+	<table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboTerm" type="text" class="rcbInput radPreventDecorate" id="rcboTerm_Input" value="2025-26 Term 2" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboTerm_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboTerm_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2025-26 Term 3B</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2025-26 Term 3A</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox" checked="checked">2025-26 Term 2</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2025-26 Term 1</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2024-25 Term 3B</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2024-25 Term 3A</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2024-25 Term 2</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2024-25 Term 1</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2023-24 Term 3B</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2023-24 Term 3A</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2023-24 Term 2</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2023-24 Term 1</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2022-23 Term 3B</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2022-23 Term 3A</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2022-23 Term 2</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2022-23 Term 1</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2021-22 Term 3B</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2021-22 Term 3A</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2021-22 Term 2</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">2021-22 Term 1</label></li></ul></div></div></div><input id="rcboTerm_ClientState" name="rcboTerm_ClientState" type="hidden" autocomplete="off" value="{&quot;logEntries&quot;:[],&quot;value&quot;:&quot;&quot;,&quot;text&quot;:&quot;2025-26 Term 2&quot;,&quot;enabled&quot;:true,&quot;checkedIndices&quot;:[2],&quot;checkedItemsTextOverflows&quot;:false}">
+</div>&nbsp;<span id="FV" style="color:Red;display:none;">Pls provide Term</span>
+                                &nbsp;&nbsp;
+                                <input id="chkboxMT2Only" type="checkbox" name="chkboxMT2Only"><label for="chkboxMT2Only">Modified Term 2 Only</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="SearchLabel">
+                                <span id="Label2" style="display:inline-block;width:100px;">Round</span>
+                            </td>
+                            <td colspan="4">
+                                <div id="rcboBidRound" class="RadComboBox RadComboBox_Default" style="width:100px;white-space:normal;">
+	<table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboBidRound" type="text" class="rcbInput radPreventDecorate" id="rcboBidRound_Input" value="" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboBidRound_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboBidRound_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem"></li><li class="rcbItem">1</li><li class="rcbItem">1A</li><li class="rcbItem">1B</li><li class="rcbItem">1C</li><li class="rcbItem">2</li><li class="rcbItem">2A</li></ul></div></div></div><input id="rcboBidRound_ClientState" name="rcboBidRound_ClientState" type="hidden" autocomplete="off">
+</div>
+                                &nbsp;&nbsp;
+                                <span id="Label1">Window</span>
+                                &nbsp;
+                               <div id="rcboBidWindow" class="RadComboBox RadComboBox_Default" style="width:100px;white-space:normal;">
+	<table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboBidWindow" type="text" class="rcbInput radPreventDecorate" id="rcboBidWindow_Input" value="" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboBidWindow_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboBidWindow_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem"></li><li class="rcbItem">1</li><li class="rcbItem">2</li><li class="rcbItem">3</li><li class="rcbItem">4</li><li class="rcbItem">5</li></ul></div></div></div><input id="rcboBidWindow_ClientState" name="rcboBidWindow_ClientState" type="hidden" autocomplete="off">
+</div>&nbsp;<i><span id="Label3">Note: Windows 4-6 are for Modified Term.</span></i>
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td class="SearchLabel">
+                                <span id="lblSubjectArea">Subject Area</span>
+                            </td>
+                            <td colspan="1">
+                                <div id="rcboSubjectArea" class="RadComboBox RadComboBox_Default" style="width:361px;white-space:normal;">
+	<table summary="combobox" style="border-width:0;border-collapse:collapse;width:100%" class="">
+		<tbody><tr class="rcbReadOnly">
+			<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="rcboSubjectArea" type="text" class="rcbInput radPreventDecorate" id="rcboSubjectArea_Input" value="" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="rcboSubjectArea_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+		</tr>
+	</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="rcboSubjectArea_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">ACCT - Accounting</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">ACM - Arts and Culture Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COMM - Communication</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR - Core</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-ACM - Core - Arts and Culture Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-COMM - Core - Communication</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-CS - Core - Computer Science</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-GA - Core - Global Asia</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-INTS - Core - Integrative Studies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-IS - Core - Information Systems</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-JPAN - Core - Japanese Language</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-KREA - Core - Korean Language</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-LAW - Core - Law</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-MAND - Core - Mandarin Language</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-MGMT - Core - Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-MLAY - Core - Malay Language</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-OBHR - Core - OBHR</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-PHIL - Core - Philosophy</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-POSC - Core - Political Science</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-PPPM - Core - Public Policy and Public Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-PSYC - Core - Psychology</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-SOCG - Core - Sociology</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-SSOC - Core - Sustainable Societies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-STAT - Core - Statistics</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">COR-THAI - Core - Thai Language</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">CS - Computer Science</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">DSA - Data Science &amp; Analytics</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">ECON - Economics</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">FNAR - Fine Arts &amp; Performing Arts</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">FNCE - Finance</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">FTW - Finishing Touch Workshop</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">GA - Global Asia</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">HIST - History</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">HUMN - Humanities</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">IDIS - Interdisciplinary</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">IDST - Independent Studies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">INTS - Integrative Studies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">IS - Information Systems</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">LAW - Law</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">LGST - Legal Studies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">MGMT - Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">MKTG - Marketing</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">OBHR - Organisational Behaviour and Human Resources</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">OPIM - Operations and Information Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">PHIL - Philosophy</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">PLE - Politics, Law &amp; Economics</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">POSC - Political Science</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">PPPM - Public Policy and Public Management</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">PSYC - Psychology</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">QF - Quantitative Finance</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SE - Software Engineering</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SMT - Smart-City Management and Technology</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SOCG - Sociology</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SPRT - Sports</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SSCS - Social Science Capstone Seminar</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">SSOC - Sustainable Societies</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">STAT - Statistics</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">TRAD - Trade</label></li><li class="rcbItem"><label><input type="checkbox" class="rcbCheckBox">WRIT - Writing</label></li></ul></div></div></div><input id="rcboSubjectArea_ClientState" name="rcboSubjectArea_ClientState" type="hidden" autocomplete="off">
+</div>
+                                &nbsp;&nbsp;
+                                <span id="lblCatalogueNumber">Catalogue No</span>
+                                <span id="rtxtCatalogueNo_wrapper" class="riSingle RadInput RadInput_Default" style="width:100px;"><input id="rtxtCatalogueNo" name="rtxtCatalogueNo" size="20" class="riTextBox riEmpty" value="E.g. 101" type="text"><input id="rtxtCatalogueNo_ClientState" name="rtxtCatalogueNo_ClientState" type="hidden" autocomplete="off" value="{&quot;enabled&quot;:true,&quot;emptyMessage&quot;:&quot;E.g. 101&quot;,&quot;validationText&quot;:&quot;&quot;,&quot;valueAsString&quot;:&quot;&quot;,&quot;lastSetTextBoxValue&quot;:&quot;E.g. 101&quot;}"></span>
+                            </td>
+                        </tr>                            
+                        <tr>
+                            <td class="SearchLabel">
+                                <span id="lblCourseTitle">Course Title</span>
+                            </td>
+                            <td>
+                                <span id="rtxtCourseTitle_wrapper" class="riSingle RadInput RadInput_Default" style="width:361px;"><input id="rtxtCourseTitle" name="rtxtCourseTitle" size="20" class="riTextBox riEmpty" value="Please input a title or part of a title with a wildcard %" type="text"><input id="rtxtCourseTitle_ClientState" name="rtxtCourseTitle_ClientState" type="hidden" autocomplete="off" value="{&quot;enabled&quot;:true,&quot;emptyMessage&quot;:&quot;Please input a title or part of a title with a wildcard %&quot;,&quot;validationText&quot;:&quot;&quot;,&quot;valueAsString&quot;:&quot;&quot;,&quot;lastSetTextBoxValue&quot;:&quot;Please input a title or part of a title with a wildcard %&quot;}"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" style="width:1000px">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="1" align="center" style="vertical-align:bottom">
+                                <span id="RadButton_Reset" class="RadButton RadButton_Default rbSkinnedButton" style="display:inline-block;width:100px;" tabindex="0"><input class="rbDecorated" type="button" name="RadButton_Reset_input" id="RadButton_Reset_input" value="Reset" style="width:100%;padding-left:0;padding-right:4px;" tabindex="-1"><input id="RadButton_Reset_ClientState" name="RadButton_Reset_ClientState" type="hidden" autocomplete="off" value="{&quot;text&quot;:&quot;Reset&quot;,&quot;value&quot;:&quot;&quot;,&quot;checked&quot;:false,&quot;target&quot;:&quot;&quot;,&quot;navigateUrl&quot;:&quot;&quot;,&quot;commandName&quot;:&quot;&quot;,&quot;commandArgument&quot;:&quot;&quot;,&quot;autoPostBack&quot;:true,&quot;selectedToggleStateIndex&quot;:0,&quot;validationGroup&quot;:null,&quot;readOnly&quot;:false,&quot;primary&quot;:false,&quot;enabled&quot;:true}"></span>&nbsp;
+                                <span id="RadButton_Search" class="RadButton RadButton_Default rbSkinnedButton" style="display:inline-block;width:100px;" tabindex="0"><span class="rbPrimaryIcon rbSearch"></span><input class="rbDecorated rbPrimary" type="button" name="RadButton_Search_input" id="RadButton_Search_input" value="Search" style="width:100%;padding-left:0;padding-right:4px;" tabindex="-1"><input id="RadButton_Search_ClientState" name="RadButton_Search_ClientState" type="hidden" autocomplete="off" value="{&quot;text&quot;:&quot;Search&quot;,&quot;value&quot;:&quot;&quot;,&quot;checked&quot;:false,&quot;target&quot;:&quot;&quot;,&quot;navigateUrl&quot;:&quot;&quot;,&quot;commandName&quot;:&quot;&quot;,&quot;commandArgument&quot;:&quot;&quot;,&quot;autoPostBack&quot;:true,&quot;selectedToggleStateIndex&quot;:0,&quot;validationGroup&quot;:null,&quot;readOnly&quot;:false,&quot;primary&quot;:false,&quot;enabled&quot;:true}"></span>
+                                <div id="UpdateProgress1" style="display:none;" role="status" aria-hidden="true">
+	  
+                                        <img src="./BOSS Bidding Online System_files/ajax-loader-transparent.gif"><span id="Label5" style="color:Black;font-family:Arial;font-size:XX-Small;font-weight:bold;padding: 5px">Loading....</span> 
+                                    
+</div>                            
+                            </td>
+                            <td colspan="1" align="left" style="vertical-align:bottom">
+                                <a href="https://smu.sharepoint.com/:u:/r/sites/oasis/SitePages/RO/BOSS-Overall-Results.aspx?csf=1&amp;web=1&amp;e=bQLIc5" target="_blank">Download</a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">&nbsp;</td>
+                        </tr>
+                        </tbody></table>
+                      </div>
+                </div>                
+                </div>
+
+                <div id="RadWindowManager1" style="display:none;">
+			<div id="RadWindowManager1_alerttemplate" style="display:none;">
+        <div class="rwDialogPopup radalert">
+            <div class="rwDialogText">
+            {1}
+            </div>
+
+            <div>
+                <a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);">
+                    <span class="rwOuterSpan">
+                        <span class="rwInnerSpan">##LOC[OK]##</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        </div><div id="RadWindowManager1_prompttemplate" style="display:none;">
+         <div class="rwDialogPopup radprompt">
+                <div class="rwDialogText">
+                {1}
+                </div>
+                <div>
+                    <script type="text/javascript">
+                    function RadWindowprompt_detectenter(id, ev, input)
+                    {
+                        if (!ev) ev = window.event;
+                        if (ev.keyCode == 13)
+                        {
+                            var but = input.parentNode.parentNode.getElementsByTagName("A")[0];
+                            if (but)
+                            {
+                                if (but.click) but.click();
+                                else if (but.onclick)
+                                {
+                                    but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);
+                                }
+                            }
+                           return false;
+                        }
+                        else return true;
+                    }
+                    </script>
+                    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter(&#39;{0}&#39;, event, this);" type="text" class="rwDialogInput" value="{2}">
+                </div>
+                <div>
+                    <a onclick="$find(&#39;{0}&#39;).close(this.parentNode.parentNode.getElementsByTagName(&#39;input&#39;)[0].value);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                    <a onclick="$find(&#39;{0}&#39;).close(null);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+                </div>
+            </div>
+        </div><div id="RadWindowManager1_confirmtemplate" style="display:none;">
+        <div class="rwDialogPopup radconfirm">
+            <div class="rwDialogText">
+            {1}
+            </div>
+            <div>
+                <a onclick="$find(&#39;{0}&#39;).close(true);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                <a onclick="$find(&#39;{0}&#39;).close(false);" class="rwPopupButton" href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+            </div>
+        </div>
+        </div><input id="RadWindowManager1_ClientState" name="RadWindowManager1_ClientState" type="hidden">
+		</div>
+                <!-- div id="OverallResults" -->
+                <div id="UpdatePanel_Result">
+                    
+                    <div id="RadGrid_OverallResults" class="RadGrid RadGrid_Default OverallResultsGrid" style="border-color:LightGrey;width:100%;" tabindex="0">
+
+<table class="rgMasterTable" id="RadGrid_OverallResults_ctl00" style="width:100%;table-layout:auto;empty-cells:show;">
+	<colgroup>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+<thead>
+		<tr>
+			<th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;TERM_DESCRIPTION&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl03&#39;,&#39;&#39;)">Term</a>&nbsp;<input type="submit" name="RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl04" value=" " title="Sorted desc" class="rgSortDesc"></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;SESSION_DESCRIPTION&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl05&#39;,&#39;&#39;)">Session</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;EVENT_TYPE_DESCRIPTION&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl06&#39;,&#39;&#39;)">Bidding Window</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;COURSE_CODE&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl07&#39;,&#39;&#39;)">Course</a>&nbsp;<input type="submit" name="RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl08" value=" " title="Sorted asc" class="rgSortAsc"></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;COURSE_TITLE&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl09&#39;,&#39;&#39;)">Description</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;CLASS_SECTION&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl10&#39;,&#39;&#39;)">Sect</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;MEDIAN_BID&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl11&#39;,&#39;&#39;)">Median</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;MINIMUM_BID&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl12&#39;,&#39;&#39;)">Min</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;ENROLLMENT_CAPACITY&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl13&#39;,&#39;&#39;)">Vacancy</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;VACANCY_OPEN&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl14&#39;,&#39;&#39;)">Open</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;VACANCY_BEFORE_PROCESSING&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl15&#39;,&#39;&#39;)">Bef Proc</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;VACANCY_AFTER_PROCESSING&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl16&#39;,&#39;&#39;)">Aft Proc</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;VACANCY_DUE_TO_DICE&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl17&#39;,&#39;&#39;)">DICE</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:center;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;ENROLLMENT_TOTAL&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl18&#39;,&#39;&#39;)">Enrolled</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;INSTRUCTORS&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl19&#39;,&#39;&#39;)">Instructor</a></th><th scope="col" class="rgHeader" style="border-color:LightGrey;font-family:Arial;font-size:12px;font-weight:bold;white-space:nowrap;text-align:left;"><a onclick="Telerik.Web.UI.Grid.Sort($find(&#39;RadGrid_OverallResults_ctl00&#39;), &#39;SCHOOL&#39;); return false;" title="Click here to sort" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl02$ctl01$ctl20&#39;,&#39;&#39;)">School</a></th>
+		</tr>
+	</thead><tfoot>
+		<tr class="rgPager">
+			<td colspan="16"><table summary="Data pager which controls on which page is the RadGrid control." style="width:100%;border-spacing:0;">
+				<caption>
+					<span style="display: none">Data pager</span>
+				</caption><thead>
+					<tr>
+						<th scope="col">Data pager</th>
+					</tr>
+				</thead><tbody>
+					<tr>
+						<td class="rgPagerCell NextPrevAndNumeric"><div class="rgWrap rgArrPart1">
+							<input type="submit" name="RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl02" value=" " onclick="return false;" title="First Page" class="rgPageFirst"><input type="submit" name="RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl03" value=" " onclick="return false;" title="Previous Page" class="rgPagePrev">
+						</div><div class="rgWrap rgNumPart">
+							<a onclick="return false;" class="rgCurrentPage" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl05&#39;,&#39;&#39;)"><span>1</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl07&#39;,&#39;&#39;)"><span>2</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl09&#39;,&#39;&#39;)"><span>3</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl11&#39;,&#39;&#39;)"><span>4</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl13&#39;,&#39;&#39;)"><span>5</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl15&#39;,&#39;&#39;)"><span>6</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl17&#39;,&#39;&#39;)"><span>7</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl19&#39;,&#39;&#39;)"><span>8</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl21&#39;,&#39;&#39;)"><span>9</span></a><a href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl23&#39;,&#39;&#39;)"><span>10</span></a><a title="Next Pages" href="javascript:__doPostBack(&#39;RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl25&#39;,&#39;&#39;)"><span>...</span></a>
+						</div><div class="rgWrap rgArrPart2">
+							<input type="submit" name="RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl28" value=" " title="Next Page" class="rgPageNext"><input type="submit" name="RadGrid_OverallResults$ctl00$ctl03$ctl01$ctl29" value=" " title="Last Page" class="rgPageLast">
+						</div><div class="rgWrap rgAdvPart">
+							<span id="RadGrid_OverallResults_ctl00_ctl03_ctl01_ChangePageSizeLabel" class="rgPagerLabel">Page size:</span><div id="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox" class="RadComboBox RadComboBox_Default" style="width:46px;white-space:normal;">
+								<table summary="Page Size Drop Down Control" style="border-width:0;border-collapse:collapse;width:100%">
+									<caption style="display: none;">
+										PageSizeComboBox
+									</caption><tbody><tr class="rcbReadOnly">
+										<td class="rcbInputCell rcbInputCellLeft" style="width:100%;"><input name="RadGrid_OverallResults$ctl00$ctl03$ctl01$PageSizeComboBox" type="text" class="rcbInput radPreventDecorate" id="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox_Input" value="50" readonly="readonly" autocomplete="off"></td><td class="rcbArrowCell rcbArrowCellRight"><a id="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox_Arrow" style="overflow: hidden;display: block;position: relative;outline: none;">select</a></td>
+									</tr>
+								</tbody></table><div class="rcbSlide" style="z-index:6000;display:none;"><div id="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox_DropDown" class="RadComboBoxDropDown RadComboBoxDropDown_Default "><div class="rcbScroll rcbWidth"><ul class="rcbList"><li class="rcbItem">10</li><li class="rcbItem">20</li><li class="rcbItem">50</li></ul></div></div></div><input id="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox_ClientState" name="RadGrid_OverallResults_ctl00_ctl03_ctl01_PageSizeComboBox_ClientState" type="hidden" autocomplete="off">
+							</div>
+						</div><div class="rgWrap rgInfoPart">
+							 &nbsp;<strong>15623</strong> items in <strong>313</strong> pages
+						</div></td>
+					</tr>
+				</tbody>
+			</table></td>
+		</tr>
+	</tfoot><tbody>
+	<tr class="rgRow" id="RadGrid_OverallResults_ctl00__0" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT001</td><td align="left" style="width:225px;">Accounting Study Mission (Asian Studies) (Thailand (Bangkok))</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1794&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">25</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">27</td><td align="left" style="width:100px;">PRASART JONGJAROENKAMOL</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__1" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1021&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__2" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G2" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1022&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G2</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">46</td><td align="right">46</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">46</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__3" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G3" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1023&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G3</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">46</td><td align="right">46</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">CHARMAYNE HIGHFIELD</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__4" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G4" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1024&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G4</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">7</td><td align="right">7</td><td align="right">0</td><td align="right">41</td><td align="left" style="width:100px;">CHARLES CHEN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__5" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G5" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1025&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G5</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">48</td><td align="left" style="width:100px;">CHARLES CHEN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__6" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G6" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1026&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G6</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">48</td><td align="left" style="width:100px;">CHUA TESS</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__7" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G7" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1027&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G7</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">47</td><td align="left" style="width:100px;">JED KHOO</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__8" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G8" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1046&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G8</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">48</td><td align="left" style="width:100px;">LEE, YUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__9" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G9" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1090&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G9</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">WYLAND HO KY</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__10" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G10" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1122&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G10</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">47</td><td align="left" style="width:100px;">ONG SHUN SHUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__11" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G11" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1126&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G11</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">47</td><td align="left" style="width:100px;">LEE, YUN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__12" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G12" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1166&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G12</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">47</td><td align="left" style="width:100px;">LEE, YUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__13" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G13" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2341&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G13</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">47</td><td align="left" style="width:100px;">CHUA TESS</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__14" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G61" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1733&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G61</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">3</td><td align="right">3</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__15" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G62" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1848&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G62</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">2</td><td align="right">2</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">0</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__16" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="G63" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1852&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G63</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">2</td><td align="right">2</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">0</td><td align="left" style="width:100px;">CHARMAYNE HIGHFIELD</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__17" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="SG81" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2901&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG81</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">CHARMAYNE HIGHFIELD</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__18" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="SG82" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2971&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG82</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">DAVID SAMUEL</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__19" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="SG83" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2980&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG83</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__20" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT101</td><td align="left" style="width:225px;">Financial Accounting</td><td align="left"><a title="SG84" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2981&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG84</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">LEE, YUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__21" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1028&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">WONG SUAY PENG</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__22" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G2" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1036&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G2</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">4</td><td align="right">4</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">WONG SUAY PENG</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__23" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G3" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1037&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G3</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">KATHERINE YUEN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__24" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G4" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1210&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G4</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">4</td><td align="right">4</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">KATHERINE YUEN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__25" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G5" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1183&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G5</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">10</td><td align="right">10</td><td align="right">0</td><td align="right">38</td><td align="left" style="width:100px;">KATHERINE YUEN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__26" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G6" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2384&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G6</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">4</td><td align="right">4</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">MATTHEW SEOW</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__27" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G7" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1097&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G7</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">45</td><td align="left" style="width:100px;">TAN WEI PENG, BRIAN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__28" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G8" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1098&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G8</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">24</td><td align="right">24</td><td align="right">0</td><td align="right">24</td><td align="left" style="width:100px;">SHERIN TAN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__29" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="SG81" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2902&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG81</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">3</td><td align="left" style="width:100px;">WONG SUAY PENG</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__30" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="SG82" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2903&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG82</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">KATHERINE YUEN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__31" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="SG83" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2916&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG83</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">1</td><td align="left" style="width:100px;">TAN WEI PENG, BRIAN</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__32" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT102</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="SG84" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2972&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG84</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">2</td><td align="left" style="width:100px;">GARY LOW YU KAI</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__33" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1029&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">43</td><td align="left" style="width:100px;">PRASART JONGJAROENKAMOL</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__34" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G2" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1099&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G2</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">PRASART JONGJAROENKAMOL</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__35" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G3" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1100&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G3</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">GARY LOW YU KAI</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__36" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G5" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1269&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G5</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">43</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__37" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G6" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1270&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G6</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">44</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__38" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="G7" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1271&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G7</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">42</td><td align="left" style="width:100px;">KELLY NGO</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__39" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT112</td><td align="left" style="width:225px;">Management Accounting</td><td align="left"><a title="SG81" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2904&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG81</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">2</td><td align="left" style="width:100px;">PRASART JONGJAROENKAMOL</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__40" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1201&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">42</td><td align="left" style="width:100px;">ZANG YOONSEOK</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__41" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="G2" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1103&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G2</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">5</td><td align="right">5</td><td align="right">0</td><td align="right">40</td><td align="left" style="width:100px;">ZANG YOONSEOK</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__42" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="G3" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1123&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G3</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">3</td><td align="right">3</td><td align="right">0</td><td align="right">42</td><td align="left" style="width:100px;">ZANG YOONSEOK</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__43" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="G4" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1127&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G4</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">48</td><td align="right">48</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">46</td><td align="left" style="width:100px;">ZANG YOONSEOK</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__44" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="G5" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1567&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G5</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">2</td><td align="right">2</td><td align="right">0</td><td align="right">43</td><td align="left" style="width:100px;">CHO, YOUNG JUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__45" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT201</td><td align="left" style="width:225px;">Corporate Reporting and Financial Analysis</td><td align="left"><a title="SG81" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2970&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG81</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">4</td><td align="right">4</td><td align="right">1</td><td align="right">1</td><td align="right">0</td><td align="right">3</td><td align="left" style="width:100px;">CHEN CHIH-YING</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__46" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT221</td><td align="left" style="width:225px;">Accounting Information Systems</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1030&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">8</td><td align="right">8</td><td align="right">0</td><td align="right">37</td><td align="left" style="width:100px;">WONG SUAY PENG</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__47" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT221</td><td align="left" style="width:225px;">Accounting Information Systems</td><td align="left"><a title="G2" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1031&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G2</a></td><td align="right">18.86</td><td align="right">18.86</td><td align="right">45</td><td align="right">45</td><td align="right">3</td><td align="right">2</td><td align="right">0</td><td align="right">43</td><td align="left" style="width:100px;">WONG SUAY PENG</td><td align="left">SOA</td>
+	</tr><tr class="rgRow" id="RadGrid_OverallResults_ctl00__48" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT221</td><td align="left" style="width:225px;">Accounting Information Systems</td><td align="left"><a title="SG81" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=2977&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">SG81</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">4</td><td align="right">4</td><td align="right">0</td><td align="right">0</td><td align="right">0</td><td align="right">4</td><td align="left" style="width:100px;">SEOW POH SUN</td><td align="left">SOA</td>
+	</tr><tr class="rgAltRow" id="RadGrid_OverallResults_ctl00__49" style="font-family:Arial;font-size:12px;">
+		<td align="left" style="white-space:nowrap;">2025-26 Term 2</td><td align="left" style="white-space:nowrap;">Regular Academic Session</td><td align="left" style="white-space:nowrap;">Round 2A Window 3</td><td align="left" style="width:110px;">ACCT223</td><td align="left" style="width:225px;">Taxation</td><td align="left"><a title="G1" href="https://boss.intranet.smu.edu.sg/ClassDetails.aspx?SelectedClassNumber=1032&amp;SelectedAcadTerm=2520&amp;SelectedAcadCareer=UGRD" target="_blank">G1</a></td><td align="right">-</td><td align="right">0.00</td><td align="right">45</td><td align="right">45</td><td align="right">9</td><td align="right">9</td><td align="right">0</td><td align="right">36</td><td align="left" style="width:100px;">JIMMY LEE</td><td align="left">SOA</td>
+	</tr>
+	</tbody>
+
+</table><div id="RadGrid_OverallResults_SharedCalendarContainer" style="display:none;">
+
+</div><input id="RadGrid_OverallResults_ClientState" name="RadGrid_OverallResults_ClientState" type="hidden" autocomplete="off">    </div>
+
+                </div>                    
+                <!--/div-->
+                
+	</div><input id="RadMultiPage_CourseSearch_ClientState" name="RadMultiPage_CourseSearch_ClientState" type="hidden" autocomplete="off">
+</div>
+        </div>
+        </div>
+        <div class="clear"> </div>
+        <div class="grid_12">
+        </div>
+    <!--</div>--> <!--/container_12-->
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("FV"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var FV = document.all ? document.all["FV"] : document.getElementById("FV");
+FV.controltovalidate = "rcboTerm";
+FV.errormessage = "Pls provide Term";
+FV.display = "Dynamic";
+FV.validationGroup = "OverallResultsGroup";
+FV.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+FV.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('RadScriptManager1_TSM');
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        WebForm_AutoFocus('RadButton_Search');Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTabStrip, {"_scrollChildren":true,"_selectedIndex":0,"_skin":"Default","clientStateFieldID":"RadTabStrip_OverallResults_ClientState","selectedIndexes":["0"],"tabData":[{}]}, null, null, $get("RadTabStrip_OverallResults"));
+});
+
+WebForm_InitCallback();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_postBackReference":"__doPostBack(\u0027rcboCourseCareer\u0027,\u0027arguments\u0027)","_skin":"Default","_text":"Undergraduate","_uniqueId":"rcboCourseCareer","_value":"UGRD","clientStateFieldID":"rcboCourseCareer_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"value":"GRAD"},{"value":"GMAC"},{"value":"GMAF"},{"value":"GMBA"},{"value":"GMBI"},{"value":"GMCM"},{"value":"GMAE"},{"value":"GMFE"},{"value":"GMHC"},{"value":"GMIN"},{"value":"GMIT"},{"value":"GJD"},{"value":"GLLM"},{"value":"GMMT"},{"value":"GMPA"},{"value":"GMQF"},{"value":"GM02"},{"value":"GM01"},{"value":"GPGP"},{"value":"UGRD","selected":true}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":19}, null, null, $get("rcboCourseCareer"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_skin":"Default","_text":"COURSE","_uniqueId":"rcboCourseType","_value":"COURSE","clientStateFieldID":"rcboCourseType_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"value":"COURSE","selected":true}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":0}, null, null, $get("rcboCourseType"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_checkBoxes":true,"_dropDownWidth":0,"_height":0,"_skin":"Default","_uniqueId":"rcboTerm","checkedIndices":[],"clientStateFieldID":"rcboTerm_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"value":"2532","selected":true,"checked":false},{"value":"2531","checked":false},{"value":"2520","checked":false},{"value":"2510","checked":false},{"value":"2432","checked":false},{"value":"2431","checked":false},{"value":"2420","checked":false},{"value":"2410","checked":false},{"value":"2332","checked":false},{"value":"2331","checked":false},{"value":"2320","checked":false},{"value":"2310","checked":false},{"value":"2232","checked":false},{"value":"2231","checked":false},{"value":"2220","checked":false},{"value":"2210","checked":false},{"value":"2132","checked":false},{"value":"2131","checked":false},{"value":"2120","checked":false},{"value":"2110","checked":false}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":0}, {"itemChecking":clientItemChecking}, null, $get("rcboTerm"));
+});
+
+document.getElementById('FV').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('FV'));
+}
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_skin":"Default","_uniqueId":"rcboBidRound","clientStateFieldID":"rcboBidRound_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"selected":true},{"value":"1"},{"value":"1A"},{"value":"1B"},{"value":"1C"},{"value":"2"},{"value":"2A"}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":0}, null, null, $get("rcboBidRound"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_skin":"Default","_uniqueId":"rcboBidWindow","clientStateFieldID":"rcboBidWindow_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"selected":true},{"value":"1"},{"value":"2"},{"value":"3"},{"value":"4"},{"value":"5"}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":0}, null, null, $get("rcboBidWindow"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_checkBoxes":true,"_dropDownWidth":0,"_height":0,"_skin":"Default","_uniqueId":"rcboSubjectArea","checkedIndices":[],"clientStateFieldID":"rcboSubjectArea_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"value":"ACCT","selected":true,"checked":false},{"value":"ACM","checked":false},{"value":"COMM","checked":false},{"value":"COR","checked":false},{"value":"COR-ACM","checked":false},{"value":"COR-COMM","checked":false},{"value":"COR-CS","checked":false},{"value":"COR-GA","checked":false},{"value":"COR-INTS","checked":false},{"value":"COR-IS","checked":false},{"value":"COR-JPAN","checked":false},{"value":"COR-KREA","checked":false},{"value":"COR-LAW","checked":false},{"value":"COR-MAND","checked":false},{"value":"COR-MGMT","checked":false},{"value":"COR-MLAY","checked":false},{"value":"COR-OBHR","checked":false},{"value":"COR-PHIL","checked":false},{"value":"COR-POSC","checked":false},{"value":"COR-PPPM","checked":false},{"value":"COR-PSYC","checked":false},{"value":"COR-SOCG","checked":false},{"value":"COR-SSOC","checked":false},{"value":"COR-STAT","checked":false},{"value":"COR-THAI","checked":false},{"value":"CS","checked":false},{"value":"DSA","checked":false},{"value":"ECON","checked":false},{"value":"FNAR","checked":false},{"value":"FNCE","checked":false},{"value":"FTW","checked":false},{"value":"GA","checked":false},{"value":"HIST","checked":false},{"value":"HUMN","checked":false},{"value":"IDIS","checked":false},{"value":"IDST","checked":false},{"value":"INTS","checked":false},{"value":"IS","checked":false},{"value":"LAW","checked":false},{"value":"LGST","checked":false},{"value":"MGMT","checked":false},{"value":"MKTG","checked":false},{"value":"OBHR","checked":false},{"value":"OPIM","checked":false},{"value":"PHIL","checked":false},{"value":"PLE","checked":false},{"value":"POSC","checked":false},{"value":"PPPM","checked":false},{"value":"PSYC","checked":false},{"value":"QF","checked":false},{"value":"SE","checked":false},{"value":"SMT","checked":false},{"value":"SOCG","checked":false},{"value":"SPRT","checked":false},{"value":"SSCS","checked":false},{"value":"SSOC","checked":false},{"value":"STAT","checked":false},{"value":"TRAD","checked":false},{"value":"WRIT","checked":false}],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}","selectedIndex":0}, null, null, $get("rcboSubjectArea"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTextBox, {"_displayText":"E.g. 101","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"setTimeout(\"__doPostBack(\\\u0027rtxtCatalogueNo\\\u0027,\\\u0027\\\u0027)\", 0)","_skin":"Default","_validationText":"","clientStateFieldID":"rtxtCatalogueNo_ClientState","emptyMessage":"E.g. 101","enabled":true,"styles":{HoveredStyle: ["width:100px;", "riTextBox riHover"],InvalidStyle: ["width:100px;", "riTextBox riError"],DisabledStyle: ["width:100px;", "riTextBox riDisabled"],FocusedStyle: ["width:100px;", "riTextBox riFocused"],EmptyMessageStyle: ["width:100px;", "riTextBox riEmpty"],ReadOnlyStyle: ["width:100px;", "riTextBox riRead"],EnabledStyle: ["width:100px;", "riTextBox riEnabled"]}}, null, null, $get("rtxtCatalogueNo"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadTextBox, {"_displayText":"Please input a title or part of a title with a wildcard %","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"setTimeout(\"__doPostBack(\\\u0027rtxtCourseTitle\\\u0027,\\\u0027\\\u0027)\", 0)","_skin":"Default","_validationText":"","clientStateFieldID":"rtxtCourseTitle_ClientState","emptyMessage":"Please input a title or part of a title with a wildcard %","enabled":true,"styles":{HoveredStyle: ["width:361px;", "riTextBox riHover"],InvalidStyle: ["width:361px;", "riTextBox riError"],DisabledStyle: ["width:361px;", "riTextBox riDisabled"],FocusedStyle: ["width:361px;", "riTextBox riFocused"],EmptyMessageStyle: ["width:361px;", "riTextBox riEmpty"],ReadOnlyStyle: ["width:361px;", "riTextBox riRead"],EnabledStyle: ["width:361px;", "riTextBox riEnabled"]}}, null, null, $get("rtxtCourseTitle"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadButton, {"_accessKey":"","_causesValidation":false,"_hasIcon":false,"_hasImage":false,"_isClientSubmit":true,"_isImageButton":false,"_postBackReference":"__doPostBack('RadButton_Reset','')","_renderMode":1,"clientStateFieldID":"RadButton_Reset_ClientState","confirmSettings":{},"iconData":{},"imageData":{},"singleClick":true,"text":"Reset","toggleStatesData":[],"uniqueGroupName":"","uniqueID":"RadButton_Reset","width":"100px"}, {"clicked":RadButton_Reset_Clicked}, null, $get("RadButton_Reset"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadButton, {"_accessKey":"","_causesValidation":false,"_hasIcon":true,"_hasImage":false,"_isClientSubmit":true,"_isImageButton":false,"_postBackReference":"__doPostBack('RadButton_Search','')","_renderMode":1,"clientStateFieldID":"RadButton_Search_ClientState","confirmSettings":{},"iconData":{"primaryCssClass":"rbSearch"},"imageData":{},"singleClick":true,"text":"Search","toggleStatesData":[],"uniqueGroupName":"","uniqueID":"RadButton_Search","width":"100px"}, {"clicked":RadButton_Search_Clicked}, null, $get("RadButton_Search"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"UpdatePanel_Search","displayAfter":500,"dynamicLayout":true}, null, null, $get("UpdateProgress1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"behaviors":4,"clientStateFieldID":"RadWindowManager1_ClientState","enableShadow":true,"formID":"form1","height":"300px","iconUrl":"","minimizeIconUrl":"","modal":true,"name":"RadWindowManager1","showContentDuringLoad":false,"skin":"Default","visibleStatusbar":false,"width":"600px","windowControls":"[]"}, null, null, $get("RadWindowManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMultiPage, {"clientStateFieldID":"RadMultiPage_CourseSearch_ClientState","pageViewData":[{"id":"RadPageView_Course"}],"selectedIndex":0}, null, null, $get("RadMultiPage_CourseSearch"));
+});
+//]]>
+</script>
+<span style="display: none !important;"><input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""></span><span style="display: none !important;"><input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPZwUPOGRlZGI1ZWVkMTFiM2JkBMialESoeiNNxsT0+Z1KcG9x7bE="></span><span style="display: none !important;"><input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F6F34F2C"></span><span style="display: none !important;"><input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdACn0cTepEACB0J6KHrKSGxKlSNJlA3Zq9+0E0D1lQiKyYAgEXrKy65hRa9EgtwQPCnFrlER5hMtgl4awySU7vOMSscFYlWACWgIJL61eAWBZv3iJWBLGpu9mVaTOPhiNW6/4cM5cGBVqFJh6ykCjN03v9vfzTHUn1O4O8lvQ+KByw/M7EmoQBPbUueZO8d6MTSwIRBn7hKA3LXmiJoYLerSUsstBmxnVGR1WyrGXxfSwdnj9vO8tyyuHKyZXMTmBbCnvqNmiHUpSf9z3XWYHz6olcxdkIxuPILawONabRMua5wEPNalfqAeEKRzxRRwiGGeqRU0c2lXstv9N1Blt05vrWpjmm5tQwJPmk/XLWZstZoE8dwr49KXk1d0P0cMCuiMW0xnBBY8Y95+PtdIp71yyi0Ra24LPLil3bh2Oz9HGqHL3yMUWwiTB4V9Wa9DA/qp/H89BAHKm1rSO+tEP733C5ewIZ3m7cxi5AR4tB2bup5X1kawLWR6AVfoeyjLpUJsXb1F59OTIGRzl3sdeCAZZZYXBuwFblIV5W7C/t5HdBtQRBWo2UljHmsonTaMumV1c1Li3HykpsF4iEwbVffllL1AeHWUwNcjp/eWfOX9MapchyZxjacbtlVCr1/FAREonFxfJR2ulfrGJCUDTcwcJM+tx6xysuj0DT7LM8IKRJBg8Z+mBxVevXKZ1Ej3EJFBD6nRy/Q7adiALd1DhrXfwFJcjkV/891Yz+EVwOlYIaXoF1mIcdgVIoWEdywcdQ93i60L2+Jg1RZxftUEvZpum08LHaX7rgBowVhzZdvprke5CPFFaItgWkDQi33pnqmhsRBk1fAmceHci1xeShzD0up5UqUqJrzFF7fTcQ5gq9Uq+PebTuulWp7ic4bQHaCsRH4Ug"></span></form>
+
+
+<script language="javascript" type="text/javascript">
+    /* Start: This is for session timeout popup */   
+    var stustaff = null;
+    var sessionTimeoutWarning = '30';
+    var sessionTimeout = '40';
+    var sessionWarningTimer = null;
+    sessionWarningTimer = setTimeout('SessionWarning()', parseInt(sessionTimeoutWarning) * 60 * 1000);
+
+    //Session Warning
+    function SessionWarning() {
+        var minutesForExpiry = (parseInt(sessionTimeout) - parseInt(sessionTimeoutWarning));
+        var message = "BOSS - Bidding Online System\n\nYour session will expire in " + minutesForExpiry + " min(s). \n Click \"OK\" to continue or \"Cancel\" to logout.";
+        //Confirm the user if he wants to extend the session
+        answer = confirm(message);
+        if (answer == true) {
+            var page = "time.aspx?t=" + Math.random();
+            ajax(page);
+        }
+        else {
+            window.location = "Logout.aspx";
+        }
+    }
+
+    function resetTimer() {
+        clearTimeout(sessionWarningTimer); //to clear the original timeout set
+        sessionWarningTimer = setTimeout('SessionWarning()', parseInt(sessionTimeoutWarning) * 60 * 1000);
+    }
+
+    function ajax(url) {
+        // native XMLHttpRequest object
+        //document.getElementById(target).innerHTML = 'Loading...';
+        if (window.XMLHttpRequest) {
+            req = new XMLHttpRequest();
+            req.onreadystatechange = function () { ajaxDone(); };
+            req.open("GET", url, true);
+            req.send(null);
+            // IE/Windows ActiveX version
+        } else if (window.ActiveXObject) {
+            req = new ActiveXObject("Microsoft.XMLDOM");
+            if (req) {
+                req.onreadystatechange = function () { ajaxDone(); };
+                req.open("GET", url, true);
+                req.send(null);
+            }
+        }
+    }
+
+    function ajaxDone() {
+        // only if req is "loaded"
+        if (req.readyState == 4) {
+            // only if "OK"
+            if (req.status == 200 || req.status == 304) {
+                //alert('req.status: ' + req.status + 'readyState: ' + req.readyState);
+                results = req.responseText;
+                //alert(results);
+
+                var sessIDIndex = results.indexOf('|');
+                var sessID = results.substr(0, sessIDIndex);
+                if (sessID == "valid") {
+                    resetTimer();                   
+                }
+                else if (sessID == "over") {
+                    var userDomain = results.substr(sessIDIndex + 1);
+                    stustaff = userDomain;
+                    if (userDomain == "STUDENT") {
+                        var message = 'BOSS - Bidding Online System\n\nSorry, session has expired. You will be directed to Summary Page.';
+                        ShowAlert(message);
+                    }
+                    else {
+                        var message = 'BOSS - Bidding Online System\n\nSorry, session has expired.';
+                        ShowAlert(message);
+                    }
+                }
+
+
+            } else {
+                req.statusText;
+            }
+        }
+    }
+  
+    function ShowAlert(message) {
+        alert(message);
+        if (stustaff == "SMUSTU") {
+            window.location = "Summary.aspx";
+        }
+        else if (stustaff == "SMUSTF") {
+            window.location = "ExpiredSTF.aspx";
+        }
+    }
+
+    /* End: This is for session timeout popup */
+    function ClearClassDetailsDiv(button, args) {
+        var pageName = window.location.pathname;
+        if (pageName.search("/ClassSearch.aspx") != -1) {
+            var div1 = document.getElementById("ClassSearchResultsDiv");
+            if (div1 != null) {
+                div1.innerHTML = "";
+            }
+        }
+
+    }
+
+  
+   
+   
+</script>
+
+</body></html>
