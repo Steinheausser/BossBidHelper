@@ -6,4 +6,4 @@ Then run using cargo run --release in the root folder.
 A few issues: rust cannot read older xls files. Hence all files are converted into parquet. Furthermore, linear regression predictions for bids are wonky. Also included is a .py script that clicks through and scrapes BOSS tables if they are not released onto OASIS yet.
 
 Feedback always welcome. 
-Use at your own risk. This is AI slop after all.
+Use at your own risk. 
