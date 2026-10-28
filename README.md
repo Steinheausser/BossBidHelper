@@ -140,4 +140,4 @@ The Instructors tab ranks instructors by how much more their sections cost than 
 `Bid History/scrape_bids.py` clicks through and scrapes BOSS tables if they are not released onto OASIS yet.
 
 Feedback always welcome.
-Use at your own risk. This is AI slop after all.
+Use at your own risk.
