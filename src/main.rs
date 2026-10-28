@@ -1,36 +1,45 @@
+pub mod cli;
+pub mod config;
 pub mod data;
 pub mod ui;
 
-use eframe::egui;
-use std::sync::Arc;
-use std::path::Path;
+use std::path::PathBuf;
+use std::process::ExitCode;
 
-fn main() -> Result<(), eframe::Error> {
-    let data_dir = Path::new("data");
-    println!("Loading data from {:?}...", data_dir);
-    let app_data = match data::loader::load_all_data(data_dir) {
-        Ok(d) => {
-            println!("Loaded {} rows successfully.", d.rows.len());
-            d
-        },
-        Err(e) => {
-            eprintln!("Failed to load data: {}", e);
-            std::process::exit(1);
-        }
+fn main() -> ExitCode {
+    let cli = match cli::Cli::parse_args() {
+        Ok(cli) => cli,
+        Err(code) => return code,
     };
-    
-    let arc_data = Arc::new(app_data);
+    match cli.gui_launch() {
+        Ok(Some(launch)) => open_app(cli.data_dir_arg(), launch),
+        Ok(None) => cli::run(cli),
+        Err(err) => cli::fail(&err, cli.json),
+    }
+}
 
+/// Opens the desktop app on the data folder given on the command line, or the usual default.
+fn open_app(data_dir: Option<PathBuf>, launch: ui::Launch) -> ExitCode {
+    let config = config::Config::load();
+    let data_dir = config::resolve_data_dir(data_dir.as_deref(), &config);
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_inner_size([1200.0, 800.0])
-            .with_min_inner_size([800.0, 600.0]),
+            .with_title("SMU BOSS Bid Helper")
+            .with_inner_size([1360.0, 860.0])
+            .with_min_inner_size([960.0, 640.0]),
         ..Default::default()
     };
 
-    eframe::run_native(
-        "SMU Bid Analyser",
+    let result = eframe::run_native(
+        "SMU BOSS Bid Helper",
         options,
-        Box::new(|cc| Ok(Box::new(ui::App::new(cc, arc_data)))),
-    )
+        Box::new(move |cc| Ok(Box::new(ui::App::new(cc, data_dir, config, launch)))),
+    );
+    match result {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(err) => {
+            eprintln!("error: could not open the window: {err}");
+            ExitCode::FAILURE
+        }
+    }
 }
