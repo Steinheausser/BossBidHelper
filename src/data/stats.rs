@@ -85,6 +85,113 @@ pub fn median(sorted: &[f64]) -> Option<f64> {
     Some(if sorted.len().is_multiple_of(2) { (sorted[m - 1] + sorted[m]) / 2.0 } else { sorted[m] })
 }
 
+/// How big one whole term was: what was on offer and how much of it bidding took up.
+///
+/// Built from every row the caller passes (usually every course, after the session and window
+/// filters), unlike `TermSummary`, which is one course. A section is a `(course, session, section)`
+/// triple and counts once however many windows it was offered in. Seat counts avoid counting a seat
+/// once per window: `first_window_seats` takes each section's first open window only, and
+/// `seats_unclaimed` its last window only.
+///
+/// The BOSS export has no class days or times, so nothing here is about the timetable.
+/// Serialised values are rounded (see `query::ser`); the fields keep full precision for the UI.
+#[derive(Debug, Clone, Serialize)]
+pub struct TermOverview {
+    #[serde(serialize_with = "crate::data::query::ser::term")]
+    pub term: Term,
+    /// Distinct course codes.
+    pub courses: usize,
+    /// Distinct sections (classes): course, session and section name.
+    pub sections: usize,
+    /// Distinct instructor entries. A co-taught entry ("A, B") counts as one.
+    pub instructors: usize,
+    /// Distinct bidding windows (round and window) that had any rows.
+    pub windows: usize,
+    /// Class size summed over the sections: each section's largest `Vacancy`.
+    pub class_seats: i64,
+    /// Seats open for bidding in each section's first window with seats open, summed.
+    pub first_window_seats: i64,
+    /// Seats won through bidding, summed over every window.
+    pub seats_won: i64,
+    /// Seats still open after each section's last window, summed.
+    pub seats_unclaimed: i64,
+    /// Section-windows with seats open for bidding.
+    pub available: usize,
+    /// Section-windows that filled.
+    pub filled: usize,
+    /// `filled` over `available`, or 0 when no seats were open.
+    #[serde(serialize_with = "crate::data::query::ser::ratio")]
+    pub fill_rate: f64,
+    /// Median clearing price over the section-windows that filled.
+    #[serde(serialize_with = "crate::data::query::ser::opt_money")]
+    pub clearing_median: Option<f64>,
+}
+
+/// One `TermOverview` per term in `rows`, oldest first.
+pub fn term_overviews(rows: &[&BidRow]) -> Vec<TermOverview> {
+    let mut by_term: BTreeMap<Term, Vec<&BidRow>> = BTreeMap::new();
+    for r in rows {
+        by_term.entry(r.term).or_default().push(r);
+    }
+    by_term.into_iter().map(|(term, rs)| term_overview(term, &rs)).collect()
+}
+
+fn term_overview(term: Term, rows: &[&BidRow]) -> TermOverview {
+    /// Per section: largest class size, (first open window, its seats), (last window, seats left).
+    #[derive(Default)]
+    struct Section {
+        class_size: i32,
+        first_open: Option<((crate::data::RoundKind, u8), i32)>,
+        last: Option<((crate::data::RoundKind, u8), i32)>,
+    }
+    let mut sections: HashMap<(&str, &str, &str), Section> = HashMap::new();
+    let mut courses = HashSet::new();
+    let mut instructors = HashSet::new();
+    let mut windows = HashSet::new();
+    let mut clearing = Vec::new();
+    let (mut available, mut seats_won) = (0usize, 0i64);
+    for r in rows {
+        courses.insert(&*r.course_code);
+        if !r.instructor.is_empty() {
+            instructors.insert(&*r.instructor);
+        }
+        let window = (r.round, r.window);
+        windows.insert(window);
+        let s = sections.entry((&*r.course_code, &*r.session, &*r.section)).or_default();
+        s.class_size = s.class_size.max(r.vacancy);
+        if s.last.is_none_or(|(w, _)| window >= w) {
+            s.last = Some((window, r.after_proc.max(0)));
+        }
+        if r.available() {
+            available += 1;
+            seats_won += r.seats_taken() as i64;
+            if r.filled() {
+                clearing.push(r.min_bid.max(MIN_BID));
+            }
+            if s.first_open.is_none_or(|(w, _)| window < w) {
+                s.first_open = Some((window, r.before_proc));
+            }
+        }
+    }
+    clearing.sort_by(f64::total_cmp);
+    let filled = clearing.len();
+    TermOverview {
+        term,
+        courses: courses.len(),
+        sections: sections.len(),
+        instructors: instructors.len(),
+        windows: windows.len(),
+        class_seats: sections.values().map(|s| s.class_size.max(0) as i64).sum(),
+        first_window_seats: sections.values().filter_map(|s| s.first_open).map(|(_, n)| n as i64).sum(),
+        seats_won,
+        seats_unclaimed: sections.values().filter_map(|s| s.last).map(|(_, n)| n as i64).sum(),
+        available,
+        filled,
+        fill_rate: if available == 0 { 0.0 } else { filled as f64 / available as f64 },
+        clearing_median: median(&clearing),
+    }
+}
+
 /// Serialised values are rounded (see `query::ser`); the fields keep full precision for the UI.
 #[derive(Debug, Clone, Serialize)]
 pub struct InstructorStats {
@@ -232,6 +339,39 @@ mod tests {
         let summaries = term_summaries(&refs);
         let counts: Vec<(u16, usize)> = summaries.iter().map(|s| (s.term.year, s.sections)).collect();
         assert_eq!(counts, vec![(2025, 3), (2026, 1)]);
+    }
+
+    #[test]
+    fn term_overview_counts_each_section_and_seat_once() {
+        // G1 opens 10 seats in window 1, 6 are won, 4 roll into window 2 where 3 are won and 1 is left.
+        let mut g1w1 = row(2025, "Regular Academic Session", "G1", 1);
+        g1w1.after_proc = 4;
+        let mut g1w2 = row(2025, "Regular Academic Session", "G1", 2);
+        g1w2.before_proc = 4;
+        g1w2.after_proc = 1;
+        // G2 fills its 10 seats in window 1, and is listed again in window 2 with nothing open.
+        let g2w1 = row(2025, "Regular Academic Session", "G2", 1);
+        let g2w2 = closed("G2", 2, 0.0);
+        // Another course with a 30-seat class taught by someone else, in another term.
+        let mut other = row(2026, "Regular Academic Session", "G1", 1);
+        other.course_code = Arc::from("IS112");
+        other.vacancy = 30;
+        other.instructor = Arc::from("PROF B");
+        let rows = [g1w2.clone(), g1w1, g2w1, g2w2, other];
+        let refs: Vec<&BidRow> = rows.iter().collect();
+        let overviews = term_overviews(&refs);
+        assert_eq!(overviews.len(), 2);
+        let t = &overviews[0];
+        assert_eq!(t.term.year, 2025);
+        assert_eq!((t.courses, t.sections, t.instructors, t.windows), (1, 2, 1, 2));
+        assert_eq!(t.class_seats, 80);
+        assert_eq!(t.first_window_seats, 20, "window 2's 4 seats rolled over from window 1");
+        assert_eq!(t.seats_won, 6 + 3 + 10);
+        assert_eq!(t.seats_unclaimed, 1);
+        assert_eq!((t.available, t.filled), (3, 1));
+        assert_eq!(t.clearing_median, Some(15.0));
+        let next = &overviews[1];
+        assert_eq!((next.courses, next.sections, next.class_seats, next.seats_won), (1, 1, 30, 10));
     }
 
     #[test]

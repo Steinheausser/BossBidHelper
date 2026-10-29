@@ -53,7 +53,7 @@ what was loaded. Commands take about half a second.
    and retry. If a code or name is not found, ask the student or use a listed suggestion. Never map it to a similar one silently.
 5. Text mode: stdout is the table. `Loading ...` and `warning: ...` lines go to stderr. With `--json`, stderr
    stays empty and everything is in the document: read the `warnings` array (empty means none). Every command
-   that can warn has one: `info`, `search`, `course`, `plan`, `instructors`, `hot` and `backtest`.
+   that can warn has one: `info`, `search`, `course`, `plan`, `instructors`, `terms`, `hot` and `backtest`.
 6. Course codes ignore case, spaces and hyphens in every command that takes one, `search` included: "is 216"
    and "cor comm1304" find IS216 and COR-COMM1304. If several codes collapse to the same text, the command exits
    3 and lists them in `suggestions`. If a code is unclear, `search` it first.
@@ -210,6 +210,27 @@ compare with). `sections` and `compared` count section-windows. With a low minim
 the list: `--min-compared 3` put an instructor with 3 comparisons first at +170% (at the time of writing).
 Keep the default minimum, or raise it, for a broad ranking.
 
+### terms
+
+How big each term was across every course: courses, sections (classes), instructors, bidding windows and
+seats, and how much of it bidding took up.
+
+    smu_bid_analyser --json terms
+    smu_bid_analyser --json terms --school SCIS --window R1W1
+
+Flags: `--window W` (default `all`: every round and window); `--school SCHOOL` (case-insensitive; exit 3
+with the schools in `suggestions` if unknown).
+
+JSON: `window`, `window_code`, `school` (null for every school), `excluded_sessions`, `warnings`, and `terms`,
+oldest first, each with `term`, `courses`, `sections`, `instructors`, `windows`, `class_seats` (class sizes
+added up), `first_window_seats` (seats open in each section's first open window), `seats_won` (seats taken by
+bids over every window), `seats_unclaimed` (seats still open after each section's last window), `available`
+and `filled` (section-windows), `fill_rate` and `clearing_median`.
+
+Gotchas: a section counts once however many windows it was in, and seats are not counted once per window
+(seats left in window 1 roll into window 2, so adding `before_proc` over windows would double-count). The
+BOSS export has no class days, times or venues, so this tool cannot answer timetable questions.
+
 ### hot
 
 Courses with the highest median clearing price in one term and window.
@@ -363,6 +384,8 @@ R1W1, say so, and show `windows_offered` from `course` so they can check.
 ## 7. Limitations and pitfalls
 
 Data
+- No timetable. The BOSS Overall Results export has no class days, times or venues, so the tool cannot say
+  when a class meets or whether two classes clash.
 - No live data. The tool knows only the exported terms (`info` shows the latest). It cannot see the
   seats in the current window or the bidding that is happening now.
 - Instructor names need care. The loader merges spelling variants it can recognise: "MOK, HENG NGEE" becomes

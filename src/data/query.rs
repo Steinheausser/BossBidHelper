@@ -7,7 +7,7 @@
 
 use crate::data::filter::{course_rows, instructors_for_course, windows_for_course, GlobalFilters, WindowSel};
 use crate::data::model::{forecast, Confidence, Forecast, ForecastQuery, ModelParams, Observation, MIN_BID};
-use crate::data::stats::{instructor_ranking, median, term_summaries, InstructorStats, TermSummary};
+use crate::data::stats::{instructor_ranking, median, term_overviews, term_summaries, InstructorStats, TermOverview, TermSummary};
 use crate::data::{AppData, BidRow, CourseInfo, Term};
 use serde::Serialize;
 use std::collections::BTreeMap;
@@ -244,6 +244,17 @@ pub fn hot_courses_with_min_filled(
         .collect();
     v.sort_by(|a, b| b.0.total_cmp(&a.0));
     v.into_iter().map(|(_, c)| c).collect()
+}
+
+/// How big each term was across every course: courses, sections, instructors and seats, oldest term
+/// first. Limited to one window (or all of them) and, when `school` is given, to that school's sections.
+pub fn term_overview(data: &AppData, filters: &GlobalFilters, sel: WindowSel, school: Option<&str>) -> Vec<TermOverview> {
+    let rows: Vec<&BidRow> = data
+        .rows
+        .iter()
+        .filter(|r| sel.matches(r) && filters.allows(r) && school.is_none_or(|s| &*r.school == s))
+        .collect();
+    term_overviews(&rows)
 }
 
 /// One term of a course. Two units appear, so the field docs say which: `sections` counts each section

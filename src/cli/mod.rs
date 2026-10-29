@@ -17,6 +17,7 @@ pub mod output;
 pub mod plan;
 pub mod rank;
 pub mod search;
+pub mod terms;
 
 use crate::config::{self, Config};
 use crate::data::filter::{GlobalFilters, WindowSel};
@@ -36,6 +37,7 @@ Examples:
   smu_bid_analyser search \"data science\" --limit 10
   smu_bid_analyser --json plan IS216 --window R1W1 --target \"2026-27 T1\"
   smu_bid_analyser instructors --course IS216 --sort easiest
+  smu_bid_analyser terms --school SCIS
   smu_bid_analyser --exclude-session \"FT Workshop Session\" hot --term \"2025-26 T2\"
 
 Run `smu_bid_analyser guide` for a usage guide written for LLMs and scripts.";
@@ -107,6 +109,8 @@ pub enum Command {
     Plan(plan::PlanArgs),
     /// Rank instructors by how much harder their sections were to get than the other sections of the same course.
     Instructors(rank::InstructorsArgs),
+    /// How big each term was across every course: courses, sections, instructors, class seats, seats won and left, fill rate.
+    Terms(terms::TermsArgs),
     /// Courses with the highest median clearing price in one term. Courses need two filled sections by default (--min-filled).
     Hot(rank::HotArgs),
     /// Check how well the bid model's predictions held up on past terms.
@@ -120,8 +124,8 @@ pub struct GuiArgs {
     /// Course to select when the app opens, e.g. IS216.
     #[arg(long, value_name = "CODE")]
     pub course: Option<String>,
-    /// Tab to open first: overview (the default), planner, instructors or saved.
-    #[arg(long, value_name = "TAB", value_parser = PossibleValuesParser::new(["overview", "planner", "instructors", "saved"]))]
+    /// Tab to open first: overview (the default), planner, instructors, terms or saved.
+    #[arg(long, value_name = "TAB", value_parser = PossibleValuesParser::new(["overview", "planner", "instructors", "terms", "saved"]))]
     pub tab: Option<String>,
 }
 
@@ -458,6 +462,7 @@ fn run_command(ctx: &Ctx, command: &Command) -> Result<(), CliError> {
         Command::Course(args) => course::run(ctx, args),
         Command::Plan(args) => plan::run(ctx, args),
         Command::Instructors(args) => rank::run_instructors(ctx, args),
+        Command::Terms(args) => terms::run(ctx, args),
         Command::Hot(args) => rank::run_hot(ctx, args),
         Command::Backtest(args) => rank::run_backtest(ctx, args),
         Command::Gui(_) | Command::Guide => Err(CliError::usage("internal error: this command does not load data")),
@@ -681,7 +686,7 @@ mod tests {
                 .err()
                 .unwrap_or_else(|| panic!("{args:?} should not open the app"));
             assert_eq!((err.kind, err.exit_code()), (ErrorKind::Usage, 2), "{args:?}");
-            for command in ["info", "search", "course", "plan", "instructors", "hot", "backtest", "guide"] {
+            for command in ["info", "search", "course", "plan", "instructors", "terms", "hot", "backtest", "guide"] {
                 assert!(err.message.contains(command), "{args:?} should name {command}: {}", err.message);
             }
             let listed = err.message.rsplit("Commands: ").next().unwrap_or_default().trim_end_matches('.');
@@ -756,6 +761,7 @@ mod tests {
             "course",
             "plan",
             "instructors",
+            "terms",
             "hot",
             "backtest",
             "guide",

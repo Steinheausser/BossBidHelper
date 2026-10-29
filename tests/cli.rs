@@ -762,6 +762,46 @@ fn instructors_rejects_an_unknown_sort_with_exit_2() {
 }
 
 #[test]
+fn terms_sizes_up_every_term_across_courses() {
+    let fx = Fixture::new();
+    let run = fx.run_json(&["terms"]);
+    run.exit(0);
+    let out = run.value();
+    assert_eq!(str_at(&out, "window_code"), "all");
+    assert_eq!(out["school"], Value::Null);
+    let terms = arr_at(&out, "terms");
+    let labels: Vec<&str> = terms.iter().map(|t| str_at(t, "term")).collect();
+    assert_eq!(labels, TERMS);
+    // 2024-25 T2: six sections of four courses, each taught by someone else, in R1W1 and R1AW2.
+    let last = &terms[3];
+    assert_eq!(
+        (&last["courses"], &last["sections"], &last["instructors"], &last["windows"]),
+        (&json!(4), &json!(6), &json!(6), &json!(2))
+    );
+    assert_eq!(last["class_seats"], 40 + 40 + 30 + 20 + 20 + 20);
+    assert_eq!(last["first_window_seats"], 12 + 12 + 8 + 10 + 10 + 6);
+    assert_eq!(last["seats_won"], 12 + 12 + 5 + 10 + 6 + 6);
+    assert_eq!(last["seats_unclaimed"], 3 + 4);
+    assert_eq!((&last["available"], &last["filled"]), (&json!(6), &json!(4)));
+    assert_eq!(num_at(last, "fill_rate"), 0.6667);
+    assert_eq!(num_at(last, "clearing_median"), 20.0);
+    // The repeated section in 2023-24 T2 and the freshmen row in 2024-25 T1 are not extra sections.
+    assert!(terms.iter().all(|t| t["sections"] == 6), "{terms:?}");
+
+    let scis = fx.run_json(&["terms", "--school", "scis", "--window", "R1W1"]);
+    scis.exit(0);
+    let scis = scis.value();
+    assert_eq!(str_at(&scis, "school"), "SCIS");
+    let last = &arr_at(&scis, "terms")[3];
+    assert_eq!((&last["courses"], &last["sections"], &last["seats_won"]), (&json!(2), &json!(4), &json!(40)));
+
+    let text = fx.run(&["terms"]);
+    text.exit(0);
+    assert!(text.stdout.contains("CLASS SEATS") && text.stdout.contains("no class days or times"), "{}", text.stdout);
+    fx.run_json(&["terms", "--school", "nowhere"]).exit(3);
+}
+
+#[test]
 fn hot_ranks_the_courses_that_filled_in_the_latest_regular_term() {
     let fx = Fixture::new();
     let run = fx.run_json(&["hot", "--min-filled", "1"]);

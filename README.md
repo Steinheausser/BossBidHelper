@@ -30,7 +30,7 @@ Instructor names are tidied on load too:
 The desktop app:
 ```
 cargo run --release                                       # the app
-cargo run --release -- gui --course IS216 --tab planner   # open on a course; --tab is overview, planner, instructors or saved
+cargo run --release -- gui --course IS216 --tab planner   # open on a course; --tab is overview, planner, instructors, terms or saved
 ```
 
 ## Command line
@@ -48,6 +48,7 @@ cargo run --release -q -- <command>  # or run it from the source; -q hides cargo
 | `course` | One course's history by term: fill rate and clearing prices (`--sections` for every section) |
 | `plan` | The main one: the bid for each chance of a seat, and the chance of any bids you name |
 | `instructors` | Instructors ranked by how much harder their sections were to get than their peers' |
+| `terms` | How big each term was: courses, sections, instructors, class seats, seats won and left unclaimed, fill rate |
 | `hot` | Courses with the highest median clearing price in one term |
 | `backtest` | How well the model's bids held up on past terms |
 | `guide` | The usage guide for LLMs and scripts (Markdown, or `--json`) |
@@ -119,6 +120,14 @@ $ smu_bid_analyser hot --limit 5
 Add `--json` (before or after the command) for scripts and agents. Stdout is then one JSON document, errors included, and stderr stays empty. Exit codes: `0` ok (an empty result is still 0); `1` the data folder could not be read; `2` invalid usage; `3` a course, instructor, session, school or term was not found, or was ambiguous. A JSON error looks like `{"error": {"kind": ..., "message": ..., "suggestions": [...]}}`; use one of the suggestions to retry.
 
 **Using it from an LLM agent** (Claude Code etc.): run `smu_bid_analyser guide` (it needs no data), or point the agent at `LLM_GUIDE.md`. Something like "Use the BOSS bid CLI in this repo; read LLM_GUIDE.md first" is enough to start.
+
+The **Terms** tab in the app (and `smu_bid_analyser terms`, with `--school` and `--window`) sizes up each term
+across every course: how many courses, sections and instructors there were, the class seats, the seats open in
+each section's first bidding window, the seats won through bidding and the seats still unclaimed after the last
+window, plus the share of sections that filled and the median clearing price. A section counts once however
+many windows it was in, and seats are not counted again in each window they roll over to.
+
+The BOSS Overall Results export has no class days, times or venues, so the app cannot show the timetable.
 
 ## How the bid prediction works
 For a section that **filled**, `Min Bid` is the clearing price: bids at or above it got a seat. For a section that **did not fill**, any bid of at least e$10 got a seat. So

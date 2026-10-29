@@ -3,6 +3,7 @@ pub mod prediction;
 pub mod ranking;
 pub mod saved_searches;
 pub mod sidebar;
+pub mod terms;
 pub mod theme;
 pub mod widgets;
 
@@ -17,6 +18,7 @@ use ranking::RankingState;
 use saved_searches::SavedState;
 use serde::{Deserialize, Serialize};
 use sidebar::Sidebar;
+use terms::TermsState;
 use std::path::PathBuf;
 use std::sync::mpsc::{channel, Receiver};
 use std::sync::Arc;
@@ -27,6 +29,7 @@ pub enum Tab {
     Overview,
     Prediction,
     Ranking,
+    Terms,
     SavedSearches,
 }
 
@@ -119,6 +122,7 @@ pub struct App {
     overview: OverviewState,
     prediction: PredictionState,
     ranking: RankingState,
+    terms: TermsState,
     saved: SavedState,
     show_settings: bool,
     folder_input: String,
@@ -137,6 +141,7 @@ impl App {
             persisted.tab = match t.to_ascii_lowercase().as_str() {
                 "planner" | "prediction" => Some(Tab::Prediction),
                 "instructors" | "ranking" => Some(Tab::Ranking),
+                "terms" => Some(Tab::Terms),
                 "saved" => Some(Tab::SavedSearches),
                 _ => Some(Tab::Overview),
             };
@@ -154,6 +159,7 @@ impl App {
             overview: OverviewState::default(),
             prediction: PredictionState::default(),
             ranking: RankingState::default(),
+            terms: TermsState::default(),
             saved: SavedState::load(),
             show_settings: false,
         };
@@ -197,6 +203,7 @@ impl App {
                         // Cache keys hold the data's address, which a new data set can reuse.
                         self.prediction.clear_cache();
                         self.ranking = RankingState::default();
+                        self.terms = TermsState::default();
                         LoadState::Ready(data)
                     }
                     Err(e) => LoadState::Failed(e),
@@ -216,6 +223,7 @@ impl App {
                         (Tab::Overview, "📊  Overview"),
                         (Tab::Prediction, "🎯  Bid Planner"),
                         (Tab::Ranking, "👥  Instructors"),
+                        (Tab::Terms, "📅  Terms"),
                         (Tab::SavedSearches, "★  Saved"),
                     ] {
                         let selected = self.tab == tab;
@@ -393,7 +401,7 @@ impl eframe::App for App {
             LoadState::Failed(_) => return self.not_ready_screen(ctx),
         };
 
-        if self.tab != Tab::SavedSearches {
+        if !matches!(self.tab, Tab::SavedSearches | Tab::Terms) {
             egui::SidePanel::left("course_sidebar")
                 .resizable(true)
                 .default_width(300.0)
@@ -421,6 +429,7 @@ impl eframe::App for App {
                 Tab::Overview => self.overview.ui(ui, &mut cx),
                 Tab::Prediction => self.prediction.ui(ui, &mut cx),
                 Tab::Ranking => self.ranking.ui(ui, &mut cx),
+                Tab::Terms => self.terms.ui(ui, &mut cx),
                 Tab::SavedSearches => self.saved_ui(ui, &data),
             }
         });
